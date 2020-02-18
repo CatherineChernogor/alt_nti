@@ -1,0 +1,32 @@
+table {
+    width: 100%;
+}
+
+tr:nth-child(odd) {
+    background-color: #78d0ff;
+}
+
+tr:nth-child(even) {
+    background-color: #96c7cc;
+}
+
+td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.data {
+    padding-left: 10px;
+}
+
+.result {
+    text-align: center;
+}
+
+.right {
+    color: black;
+}
+
+.wrong {
+    color: #f80000;
+}

@@ -1,0 +1,32 @@
+.points {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    margin: 20px;
+}
+
+.bars {
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
+    height: 25px;
+    width: 200px;
+    text-align: center;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    border-radius: 3px;
+}
+
+.circle {
+    display: flex;
+    height: 70px;
+    width: 70px;
+    text-align: center;
+    align-items: center;
+    margin-left: 10px;
+    background-color: #f6f6f6;
+    border-radius: 35px;
+}

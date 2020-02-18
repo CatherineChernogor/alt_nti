@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Main from './components/Main';
+import NavMenu from './components/NavMenu';
+import Notification from './components/Notification';
+import Chat from './components/Chat';
 import './App.css';
+import { render } from '@testing-library/react';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Notification />
+      <NavMenu />
+      <Chat />
+      <Main />
+      <Footer />
     </div>
   );
+
 }
 
 export default App;

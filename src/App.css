@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  background-color: #fcfcfc;
+  font: 400 12px 'Montserrat', sans-serif;
+  color: #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/**************************************************************************/
+
+.heading1 {
+  font: 400 5rem 'Montserrat', sans-serif;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heading2 {
+  font: 400 3rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.heading3 {
+  font: 400 2rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.normal-text {
+  font: 400 1.75rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.option-text-m {
+  font: 400 1.34rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.option-text-s {
+  font: 400 1.17rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.small-text {
+  font: 400 1rem 'Montserrat', sans-serif;
+  color: black;
+}
+
+.blck-border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+/**************************************************************************/
+
+footer {
+  height: 100px;
+  margin-top: 20px;
+  background-color: #BFBFBF;
+}
+
+/**************************************************************************/
+
+header {
+  display: flex;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+}
+
+.logo {
+  height: 50px;
+  width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 60px;
+  background-image: url('./img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/**************************************************************************/
+
+.main {
+  padding-top: 70px;
+  background-color: #fcfcfc;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.title {
+  margin-top: 40px;
+}
+
+.task {
+  margin-top: 70px;
+}
+
+/**************************************************************************/
+
+.message {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #78d0ff;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.content-box {}
+
+.time-box {
+  display: flex;
+  margin-top: 5px;
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/********************************************/
+
+li {
+
+  margin-left: 10px;
+  padding: 2px;
+}
+ul {
+  margin-left: 5px;
 }
