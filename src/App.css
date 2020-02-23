@@ -56,10 +56,83 @@
 
 /**************************************************************************/
 
+.App {
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+.content{
+  flex: 1 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  background-color: #BFBFBF;
+}
+
+a:visited {
+  color: #000000;
+}
+
+/**************************************************************************/
+
+.Auth{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  
+}
+
+.form-auth{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+input{
+  height: 30px;
+  border-radius: 4px;
+
+
+}
+.field{
+
+  width: 200px;
+  margin: 5px;
+  padding-left: 5px;
+  border-width: 1px;
+  border-color: #BFBFBF;
+}
+
+.submit-button{
+  margin: 10px;
+  width: 100px;
+  background-color: #78d0ff;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+
+
+}
+/**************************************************************************/
+
 footer {
   height: 100px;
+  width: 100%;
   margin-top: 20px;
   background-color: #BFBFBF;
+  bottom: 0;
+  flex: 0 0 auto;
 }
 
 /**************************************************************************/
@@ -123,10 +196,11 @@ header {
 /********************************************/
 
 li {
-
   margin-left: 10px;
   padding: 2px;
 }
+
 ul {
   margin-left: 5px;
+  list-style-type: none;
 }

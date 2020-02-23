@@ -1,5 +1,6 @@
 import React, { createElement } from 'react';
 import '../App.css';
+import {NavLink} from 'react-router-dom';
 import { render } from '@testing-library/react';
 
 function Navigation(props){
@@ -42,14 +43,26 @@ function Navigation(props){
             <li>
                 Компьютерное зрение
                 <ul>
-                <li>Задача</li>
-                <li>Информация</li>
+                <li><NavLink to = "/task/1">Задача 1</NavLink> </li>
+                <li><NavLink to = "/task/2">Задача 2</NavLink> </li>
+                <li><NavLink to = "/task/3">Задача 3</NavLink> </li>
+                <li><NavLink to = "/info/1">Информация</NavLink></li>
                 </ul>
             </li>
-            <li>Проективная геометрия                
+            <li>3D-мэппинг                
                 <ul>
-                <li>Задача </li>
-                <li>Информация</li>
+                <li><NavLink to = "/task/4">Задача 1</NavLink> </li>
+                <li><NavLink to = "/task/5">Задача 2</NavLink> </li>
+                <li><NavLink to = "/task/6">Задача 3</NavLink> </li>
+                <li><NavLink to = "/info/2">Информация</NavLink></li>
+                </ul>
+            </li>
+            <li>Разработка приложения              
+                <ul>
+                <li><NavLink to = "/task/7">Задача 1</NavLink> </li>
+                <li><NavLink to = "/task/8">Задача 2</NavLink> </li>
+                <li><NavLink to = "/task/9">Задача 3</NavLink> </li>
+                <li><NavLink to = "/info/3">Информация</NavLink></li>
                 </ul>
             </li>
         </ul>
