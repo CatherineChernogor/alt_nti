@@ -3,7 +3,60 @@ import '../App.css';
 import {NavLink} from 'react-router-dom';
 import { render } from '@testing-library/react';
 
+const NavItemTask = (props)=>{
+
+    let path = '/task/' + props.id;
+    return (
+        <li><NavLink to ={path}>{props.name}</NavLink> </li>
+    );
+}
+const NavItemInfo = (props)=>{
+
+    let path = '/info/' + props.id;
+    return (
+        <li><NavLink to ={path}>Информация</NavLink> </li>
+    );
+}
+
 function Navigation(props){
+
+    return(
+        <ul className="option-text-m">
+            <li>
+                Компьютерное зрение
+                <ul>
+                    <NavItemTask name="Задача 1" id ="1"/>
+                    <NavItemTask name="Задача 2" id ="2"/>
+                    <NavItemTask name="Задача 3" id ="3"/>
+                    <NavItemInfo id = "10"></NavItemInfo>
+                </ul>
+            </li>
+            <li>3D-мэппинг                
+                <ul>
+                    <NavItemTask name="Задача 1" id ="4"/>
+                    <NavItemTask name="Задача 2" id ="5"/>
+                    <NavItemTask name="Задача 3" id ="6"/>
+                    <NavItemInfo id = "11"></NavItemInfo>
+                </ul>
+            </li>
+            <li>Разработка приложения              
+                <ul>
+                    <NavItemTask name="Задача 1" id ="7"/>
+                    <NavItemTask name="Задача 2" id ="8"/>
+                    <NavItemTask name="Задача 3" id ="9"/>
+                    <NavItemInfo id = "12"></NavItemInfo>
+                </ul>
+            </li>
+        </ul>
+    );
+}
+
+
+
+export default Navigation;
+
+
+
 /*
     const lvl1 = Object.keys(props.object);
     //console.log(Object.entries(props.object));
@@ -34,48 +87,11 @@ function Navigation(props){
     //var result = Object.values(props.object).map(v => Object.values(v))
     //console.log(result);
     
-
+/*
     return(/*
         <div className="nav">
         {renderNav(props.nav)}
         </div>*/
-        <ul className="option-text-m">
-            <li>
-                Компьютерное зрение
-                <ul>
-                <li><NavLink to = "/task/1">Задача 1</NavLink> </li>
-                <li><NavLink to = "/task/2">Задача 2</NavLink> </li>
-                <li><NavLink to = "/task/3">Задача 3</NavLink> </li>
-                <li><NavLink to = "/info/1">Информация</NavLink></li>
-                </ul>
-            </li>
-            <li>3D-мэппинг                
-                <ul>
-                <li><NavLink to = "/task/4">Задача 1</NavLink> </li>
-                <li><NavLink to = "/task/5">Задача 2</NavLink> </li>
-                <li><NavLink to = "/task/6">Задача 3</NavLink> </li>
-                <li><NavLink to = "/info/2">Информация</NavLink></li>
-                </ul>
-            </li>
-            <li>Разработка приложения              
-                <ul>
-                <li><NavLink to = "/task/7">Задача 1</NavLink> </li>
-                <li><NavLink to = "/task/8">Задача 2</NavLink> </li>
-                <li><NavLink to = "/task/9">Задача 3</NavLink> </li>
-                <li><NavLink to = "/info/3">Информация</NavLink></li>
-                </ul>
-            </li>
-        </ul>
-    );
-}
-
-
-
-export default Navigation;
-
-
-
-
 
         //document.querySelector('.nav-bar').append(navigation);
         /*for (let title in nav){

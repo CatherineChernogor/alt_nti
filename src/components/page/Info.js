@@ -1,15 +1,15 @@
 import React from 'react';
 import '../../App.css';
 
-const info1 = 'info1 info info info info info info info info info info info info info info info info info info info info info info info info info info info info info info info info info info ';
-class Task extends React.Component {
+class Info extends React.Component {
     render() {
         return (
-            <div className="main normal-text">
-                {info1}
-            </div>
+        <div className="main">
+            <div className="heading2 title">{this.props.title}</div>
+            <div className="normal-text">{this.props.text}</div>
+        </div>
         );
     }
 }
 
-export default Task;
+export default Info;
