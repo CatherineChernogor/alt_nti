@@ -1,9 +1,8 @@
 import React, { createElement } from 'react';
 import Bar from './Bar';
 import Circle from './Circle';
-import '../App.css';
-import '../style/points.css';
-
+import '../../../App.css';
+import '../../../style/points.css';
 function Points() {
 
     function countProgress (score, maxScore){

@@ -1,17 +1,15 @@
-import React from 'react';
-import Points from '../Points';
-import Table from '../Table';
 import '../../App.css';
+import React from 'react';
 
+import Table from './Table';
 
 class Task extends React.Component {
     render() {
         return (
-            <div className="main">
-                <Points />
+            <div >
                 <div className="heading2 title">{this.props.title}</div>
                 <div className="normal-text task">{this.props.text}</div>
-                <Table content={this.props.table} />
+                <Table />
             </div>
         );
     }

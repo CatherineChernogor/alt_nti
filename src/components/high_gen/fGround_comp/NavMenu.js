@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
-import '../App';
-import '../style/buttons.css';
-import style from '../style/style';
+import '../../../App.css';
+import '../../../style/buttons.css';
+import style from '../../../style/style';
 import Navigation from './Navigation';
 
 class NavMenu extends React.Component {

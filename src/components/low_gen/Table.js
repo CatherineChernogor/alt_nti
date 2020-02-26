@@ -1,6 +1,6 @@
 import React, { createElement } from 'react';
-import '../App.css';
-import '../style/table.css';
+import '../../App.css';
+import '../../style/table.css';
 
 function Table() {
     return (

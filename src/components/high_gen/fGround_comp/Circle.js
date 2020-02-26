@@ -1,6 +1,7 @@
 import React, { createElement } from 'react';
-import '../App.css';
-import style from '../style/style';
+import '../../../App.css';
+import style from '../../../style/style';
+
 
 function Circle(props) {
 

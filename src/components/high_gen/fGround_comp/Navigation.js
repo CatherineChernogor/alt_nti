@@ -1,7 +1,6 @@
 import React, { createElement } from 'react';
-import '../App.css';
+import '../../../App.css';
 import {NavLink} from 'react-router-dom';
-import { render } from '@testing-library/react';
 
 const NavItemTask = (props)=>{
 
