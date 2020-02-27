@@ -1,7 +1,7 @@
 import './App.css';
 import './style/high_gen.css';
 import React from 'react';
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
 
 import Auth from './components/high_gen/Auth';
 import Main from './components/high_gen/Main';
@@ -27,9 +27,11 @@ class App extends React.Component {
         <div className="content-page">
           <BrowserRouter>
             <Route
-              exact path='/auth'
+              path='/auth'
               render={() =>
                 <Auth sendPost={this.props.sendPost} />} />
+
+            <Redirect to='/auth' from = "/alt_nti"/>
             <Route
               path='/0'
               render={() =>

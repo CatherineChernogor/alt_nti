@@ -45,7 +45,7 @@ class Main extends React.Component {
           <Chat state={this.props.state}/>
           <Notification />
           <div className="content main">
-            <Points />
+            <Points state={this.props.state}/>
             {routeArray}
 
             <Route path='/0/task' render={() => {}} />
