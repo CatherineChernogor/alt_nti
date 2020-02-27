@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route
               path='/0'
               render={() =>
-                <Main sendGet={this.props.sendGet}/>} />
+                <Main state={state} sendGet={this.props.sendGet}/>} />
           </BrowserRouter>
         </div>
         <Footer />

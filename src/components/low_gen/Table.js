@@ -11,20 +11,25 @@ function Table() {
             <br></br>
             <br></br>
             <table className='option-text-m'>
-                <th>Попытки</th>
-                <th>Баллы</th>
-                <tr>
-                    <td className='data right'>15:24 23.09.3434 work time 23s</td>
-                    <td className='result'>34/100</td>
-                </tr>
-                <tr>
-                    <td className='data wrong'>15:44 23.19.3344 wrong format</td>
-                    <td className='result'>-</td>
-                </tr>
-                <tr>
-                    <td className='data rigth'>{d.time + ' ' + d.date + ' ' + d.msg}</td>
-                    <td className='result'>{b}</td>
-                </tr>
+
+                <tbody>
+                    <tr>
+                        <th>Попытки</th>
+                        <th>Баллы</th>
+                    </tr>
+                    <tr>
+                        <td className='data right'>15:24 23.09.3434 work time 23s</td>
+                        <td className='result'>34/100</td>
+                    </tr>
+                    <tr>
+                        <td className='data wrong'>15:44 23.19.3344 wrong format</td>
+                        <td className='result'>-</td>
+                    </tr>
+                    <tr>
+                        <td className='data rigth'>{d.time + ' ' + d.date + ' ' + d.msg}</td>
+                        <td className='result'>{b}</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );

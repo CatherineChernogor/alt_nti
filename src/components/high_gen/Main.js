@@ -14,14 +14,20 @@ import Info from '../low_gen/Info';
 class Main extends React.Component {
 
 
-  handler =()=>{
+  handler = () => {
     this.props.sendGet("marker/");
-    
+    this.props.sendGet("contest/"); 
+    this.props.sendGet("task/");
+    this.props.sendGet("notification/"); 
+    this.props.sendGet("answer/");
+  }
+  componentDidMount() {
+    setTimeout(this.handler, 5000);
   }
 
   render() {
 
-    this.handler();
+
     let task = [
       {
         "id": 1,
@@ -78,23 +84,23 @@ class Main extends React.Component {
       (el) =>
         el.task.task_type == 1 ?
           <Route
-            exact path={'/task/' + el.id}
+            exact path={'/0/task/' + el.id}
             render={() => <Task title={el.task.title} text={el.task.text} />} />
           : <Route
-            exact path={'/info/' + el.id}
+            exact path={'/0/info/' + el.id}
             render={() => <Info title={el.task.title} text={el.task.text} />} />
     );
     return (
       <div>
         <BrowserRouter>
-          <NavMenu />
+          <NavMenu state={this.props.state} />
           <Chat />
           <Notification />
           <div className="content main">
             <Points />
             {routeArray}
 
-            <Route path='/0/task' render={() => <Task title="1" text="1" />} />
+            <Route path='/0/task' render={() => {}} />
             <Route exact path='/0/info' component={Info} />
           </div>
         </BrowserRouter >

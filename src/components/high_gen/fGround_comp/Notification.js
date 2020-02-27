@@ -39,7 +39,7 @@ class Notification extends React.Component {
                     className='msg-box'
                     style={style.upperElement}>
                     <button className='btn not-close-btn' onClick={this.closeNotPanel}></button>
-                    <div className='not-text normal-text'>{msg + msg + msg}</div>
+                    <div className='not-text normal-text'>{msg }</div>
                 </div>
             </div>
         );
@@ -57,4 +57,4 @@ class Notification extends React.Component {
 export default Notification;
 
 //test data
-let msg = "в этом окне будетт выводиться различная инвормация для пользователя. То есть может выводится контент любого типа."
+let msg = "в этом окне будетт выводиться различная инвормация для пользователя. То есть может выводится контент любого типа. если петя напишет к немк апи"

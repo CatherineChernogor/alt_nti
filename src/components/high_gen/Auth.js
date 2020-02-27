@@ -6,8 +6,8 @@ class Auth extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: "",
-      password: ""
+      username: "user",
+      password: "AdobeFlash"
     }
   }
 
@@ -16,6 +16,7 @@ class Auth extends React.Component {
       username: this.state.username,
       password: this.state.password
     });
+
   }
 
   onChangeField = (event) => {
@@ -24,6 +25,7 @@ class Auth extends React.Component {
   }
   render() {
     const { username, password } = this.state;
+  
     return (
       <div className="Auth">
 
