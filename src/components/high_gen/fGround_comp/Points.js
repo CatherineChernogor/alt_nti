@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import Bar from './Bar';
 import Circle from './Circle';
 import '../../../App.css';

@@ -1,10 +1,10 @@
-import React, { createElement } from 'react';
+import React from 'react';
+
 import '../../../App.css';
 import '../../../style/buttons.css';
 import style from '../../../style/style';
+
 import Message from './Message';
-
-
 
 class Chat extends React.Component {
 
@@ -18,7 +18,12 @@ class Chat extends React.Component {
     closeChatBox = () => {
         this.setState({ chat: false })
     }
-    renderChat = () => {
+    renderChat = (messages) => {
+
+        let messageArray = messages.map(
+            (el)=> <Message key={el.id} content={el.text} date={el.id} time={el.id}/>
+        );
+
         return (
             <div className="chat-box blck-border">
                 <button
@@ -26,16 +31,8 @@ class Chat extends React.Component {
                     onClick={this.closeChatBox}>
                     disable chat
                 </button>
-                <Message
-                    content={message.content}
-                    date={message.date}
-                    time={message.time}
-                ></Message>
-                <Message
-                    content={message2.content}
-                    date={message2.date}
-                    time={message2.time}
-                ></Message>
+               {messageArray}
+
             </div >
         );
     }
@@ -50,8 +47,9 @@ class Chat extends React.Component {
         );
     }
     render() {
+        let messages=this.props.state.notifications.data;
         if (this.state.chat) {
-            return this.renderChat();
+            return this.renderChat(messages);
         } else {
             return this.renderBtn();
         }
@@ -59,18 +57,3 @@ class Chat extends React.Component {
 }
 
 export default Chat;
-
-//test data 
-let message = {
-
-    content: "минимум одна задача должна быть сдана в течении 15 минут. Открыт доступ к следующей задаче.",
-    date: "25.04.20",
-    time: "14:32"
-}
-
-let message2 = {
-
-    content: "минимум одна задача должна быть сдана в течении 15 минут. Открыт доступ к следующей задаче.",
-    date: "27.04.20",
-    time: "15:32"
-}

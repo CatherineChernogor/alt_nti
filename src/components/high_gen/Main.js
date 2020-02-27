@@ -15,11 +15,11 @@ class Main extends React.Component {
 
 
   handler = () => {
-    this.props.sendGet("marker/");
-    this.props.sendGet("contest/"); 
-    this.props.sendGet("task/");
-    this.props.sendGet("notification/"); 
-    this.props.sendGet("answer/");
+    //this.props.sendGet("marker/");
+    //this.props.sendGet("contest/"); 
+    //this.props.sendGet("task/");
+    //this.props.sendGet("notification/"); 
+    //this.props.sendGet("answer/");
   }
   componentDidMount() {
     setTimeout(this.handler, 5000);
@@ -27,65 +27,13 @@ class Main extends React.Component {
 
   render() {
 
-
-    let task = [
-      {
-        "id": 1,
-        "task": {
-          "id": 1,
-          "task_block": 1,
-          "task_type": 1,
-          "title": "Задание 1",
-          "text": "Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1Задание 1",
-          "points": 45
-        },
-        "progress": 0
-      },
-      {
-        "id": 2,
-        "task": {
-          "id": 2,
-          "task_block": 1,
-          "task_type": 1,
-          "title": "Задание 2",
-          "text": "Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2",
-          "points": 35
-        },
-        "progress": 0
-      },
-      {
-        "id": 3,
-        "task": {
-          "id": 3,
-          "task_block": 1,
-          "task_type": 1,
-          "title": "Задание 3",
-          "text": "Задание 3Задание 3Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2Задание 2",
-          "points": 35
-        },
-        "progress": 0
-      },
-      {
-        "id": 4,
-        "task": {
-          "id": 4,
-          "task_block": 1,
-          "task_type": 2,
-          "title": "инфрмация 1",
-          "text": "инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1инфрмация 1",
-          "points": 35
-        },
-        "progress": 0
-      }
-    ]
-
-
-    let routeArray = task.map(
+    let tasks= this.props.state.tasks.data;
+    let routeArray = tasks.map(
       (el) =>
-        el.task.task_type == 1 ?
+        el.task.task_type === 1 ?
           <Route
             exact path={'/0/task/' + el.id}
-            render={() => <Task title={el.task.title} text={el.task.text} />} />
+            render={() => <Task title={el.task.title} text={el.task.text} state={this.props.state} />} />
           : <Route
             exact path={'/0/info/' + el.id}
             render={() => <Info title={el.task.title} text={el.task.text} />} />
@@ -94,7 +42,7 @@ class Main extends React.Component {
       <div>
         <BrowserRouter>
           <NavMenu state={this.props.state} />
-          <Chat />
+          <Chat state={this.props.state}/>
           <Notification />
           <div className="content main">
             <Points />
