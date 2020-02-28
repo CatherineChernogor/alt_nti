@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../../../App.css';
-import '../../../style/points.css';
+import './points.css';
 
 import Bar from './Bar';
 import Circle from './Circle';
@@ -35,22 +35,22 @@ class Points extends React.Component {
         this.setState({ [which]: score });
     }
 
+
     componentDidMount() {
 
         let contest = JSON.parse(localStorage.getItem("contest"));
         //let progress = this.props.state.tasks.data;
-        let progress = JSON.parse(localStorage.getItem("tasks"));
+        let progress = JSON.parse(localStorage.getItem("task"));
 
-        console.log("p_tasks", progress);
 
-        //this.countScore(progress, 'progress', 'score');
-        //this.countScore(contest[0].tasks, 'points', 'maxScore');
+        this.countScore(progress, 'progress', 'score');
+        this.countScore(contest[0].tasks, 'points', 'maxScore');
+
 
         //let start_time = contest.date_start;
         //let lasts = contest.duration;
     }
     render() {
-
 
         return (
             <div className="points">

@@ -9,7 +9,7 @@ class Task extends React.Component {
             <div >
                 <div className="heading2 title">{this.props.title}</div>
                 <div className="normal-text task">{this.props.text}</div>
-                {/*<Table state={this.props.state}/>*/}
+                <Table id={this.props.id}/>
             </div>
         );
     }

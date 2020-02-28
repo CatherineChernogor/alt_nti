@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../../App.css';
-import '../../../style/buttons.css';
-import style from '../../../style/style';
+import '../../App.css';
+import '../small/buttons.css';
+import style from '../../modules/style';
 
 class Notification extends React.Component {
 

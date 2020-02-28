@@ -1,8 +1,8 @@
 import React from 'react';
 
 import '../../../App.css';
-import '../../../style/buttons.css';
-import style from '../../../style/style';
+import '../../small/buttons.css';
+import style from '../../../modules/style';
 
 import Message from './Message';
 
@@ -21,7 +21,7 @@ class Chat extends React.Component {
     renderChat = (messages) => {
 
         let messageArray = messages.map(
-            (el) => <Message key={el.id} content={el.text} date={el.id} time={el.id}/>
+            (el) => <Message key={el.id} content={el.text} date={el.date_send}/>
         );
 
         return (

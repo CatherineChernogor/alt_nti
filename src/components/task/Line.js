@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../App.css';
-import '../../../style/table.css';
+import '../../App.css';
+import './table.css';
 
 class Line extends React.Component {
 

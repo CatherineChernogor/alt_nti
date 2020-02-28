@@ -1,15 +1,13 @@
 import './App.css';
-import './style/high_gen.css';
+import './components/main/main.css';
 import React from 'react';
 import { Route, BrowserRouter, Redirect } from "react-router-dom";
 
-import Auth from './components/high_gen/Auth';
-import Main from './components/high_gen/Main';
-import Header from './components/high_gen/Header';
-import Footer from './components/high_gen/Footer';
-import Loader from './components/static/Loading';
-
-//import { state } from './components/static/Requests';
+import Auth from './components/auth/Auth';
+import Main from './components/main/Main';
+import Header from './components/main/Header';
+import Footer from './components/main/Footer';
+import Loader from './components/preloader/Loading';
 
 class App extends React.Component {
 
@@ -28,24 +26,18 @@ class App extends React.Component {
         <div className="content-page">
           <BrowserRouter>
             <Route
-              path='/auth'
-              render={() =>
-                <Auth sendPost={this.props.sendPost} />} />
+              path='/auth' render={() => <Auth />} />
 
-            <Redirect to='/auth' from = "/alt_nti"/>
-            
+            <Redirect to='/auth' from="/alt_nti" />
+
             <Route
-              path='/loader'
-              render={() =>
-                <Loader />} />
-          
+              path='/loader' render={() => <Loader />} />
+
             <Route
-              path='/0'
-              render={() =>
-                <Main sendGet={this.props.sendGet}/>} />
+              path='/0' render={() => <Main />} />
           </BrowserRouter>
         </div>
-              <Footer />
+        <Footer />
       </div >
     );
   }

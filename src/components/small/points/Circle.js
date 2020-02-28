@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../App.css';
-import style from '../../../style/style';
+import style from '../../../modules/style';
 
 
 function Circle(props) {

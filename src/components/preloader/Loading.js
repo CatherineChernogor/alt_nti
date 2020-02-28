@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../style/preloader.scss';
+import './preloader.scss';
 import { Redirect } from 'react-router-dom';
-import { sendGet } from '../static/Requests';
+import { sendGet } from '../../modules/Requests';
 
 class Loading extends React.Component {
 
