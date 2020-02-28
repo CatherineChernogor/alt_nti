@@ -33,7 +33,7 @@ class NavMenu extends React.Component {
                         onClick={this.closeMenuBox}>
                         disable menu
                         </button>
-                    <Navigation state={this.props.state}></Navigation>
+                    <Navigation />
                 </div>
             </div>
         );

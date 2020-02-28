@@ -8,8 +8,7 @@ import Main from './components/high_gen/Main';
 import Header from './components/high_gen/Header';
 import Footer from './components/high_gen/Footer';
 
-import AuthEx from './components/high_gen/ProAuth';
-import { state } from './components/static/Requests';
+//import { state } from './components/static/Requests';
 
 class App extends React.Component {
 
@@ -30,13 +29,13 @@ class App extends React.Component {
             <Route
               path='/auth'
               render={() =>
-                <Auth sendPost={this.props.sendPost} state={state}/>} />
+                <Auth sendPost={this.props.sendPost} />} />
 
             <Redirect to='/auth' from = "/alt_nti"/>
             <Route
               path='/0'
               render={() =>
-                <Main state={state} sendGet={this.props.sendGet}/>} />
+                <Main sendGet={this.props.sendGet}/>} />
           </BrowserRouter>
         </div>
               <Footer />

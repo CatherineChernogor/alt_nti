@@ -21,7 +21,7 @@ class Chat extends React.Component {
     renderChat = (messages) => {
 
         let messageArray = messages.map(
-            (el)=> <Message key={el.id} content={el.text} date={el.id} time={el.id}/>
+            (el) => <Message key={el.id} content={el.text} date={el.id} time={el.id}/>
         );
 
         return (
@@ -31,7 +31,7 @@ class Chat extends React.Component {
                     onClick={this.closeChatBox}>
                     disable chat
                 </button>
-               {messageArray}
+                {messageArray}
 
             </div >
         );
@@ -47,7 +47,7 @@ class Chat extends React.Component {
         );
     }
     render() {
-        let messages=this.props.state.notifications.data;
+        let messages = JSON.parse(localStorage.getItem("notifications"));
         if (this.state.chat) {
             return this.renderChat(messages);
         } else {

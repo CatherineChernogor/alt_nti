@@ -1,6 +1,6 @@
 import '../../App.css';
 import React from 'react';
-import { NavLink, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Auth extends React.Component {
   constructor() {

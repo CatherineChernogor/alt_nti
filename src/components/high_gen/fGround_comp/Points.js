@@ -36,14 +36,18 @@ class Points extends React.Component {
     }
 
     componentDidMount() {
-        let contest = this.props.state.contest.data[0];
-        let progress = this.props.state.tasks.data;
 
-        this.countScore(progress, 'progress', 'score');
-        this.countScore(contest.tasks, 'points', 'maxScore');
+        let contest = JSON.parse(localStorage.getItem("contest"));
+        //let progress = this.props.state.tasks.data;
+        let progress = JSON.parse(localStorage.getItem("tasks"));
 
-        let start_time = contest.date_start;
-        let lasts = contest.duration;
+        console.log("p_tasks", progress);
+
+        //this.countScore(progress, 'progress', 'score');
+        //this.countScore(contest[0].tasks, 'points', 'maxScore');
+
+        //let start_time = contest.date_start;
+        //let lasts = contest.duration;
     }
     render() {
 

@@ -20,7 +20,8 @@ const NavItemInfo = (props) => {
 class Navigation extends React.Component {
     render() {
 
-        let tasks = this.props.state.contest.data[0].tasks;
+        let contest = JSON.parse(localStorage.getItem("contest"));
+        let tasks = contest[0].tasks;
 
         let taskArray = tasks.map(
             (el) =>
