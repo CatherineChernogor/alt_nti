@@ -8,6 +8,7 @@ import Main from './components/high_gen/Main';
 import Header from './components/high_gen/Header';
 import Footer from './components/high_gen/Footer';
 
+import AuthEx from './components/high_gen/ProAuth';
 import { state } from './components/static/Requests';
 
 class App extends React.Component {
@@ -29,7 +30,7 @@ class App extends React.Component {
             <Route
               path='/auth'
               render={() =>
-                <Auth sendPost={this.props.sendPost} />} />
+                <Auth sendPost={this.props.sendPost} state={state}/>} />
 
             <Redirect to='/auth' from = "/alt_nti"/>
             <Route
@@ -38,7 +39,7 @@ class App extends React.Component {
                 <Main state={state} sendGet={this.props.sendGet}/>} />
           </BrowserRouter>
         </div>
-        <Footer />
+              <Footer />
       </div >
     );
   }
@@ -47,41 +48,3 @@ class App extends React.Component {
 export default App;
 
 
-
-
-
-/*
-  sendRequest = (method, path, data) => {
-    let request = new XMLHttpRequest();
-    request.responseType = 'json';
-    request.open(method, `${this.state.server}/api/0/${path}`);
-    request.setRequestHeader('content-Type', 'application/json');
-
-    if (method === "GET") {
-      console.log(this.state.token);
-      request.setRequestHeader('Authorization', 'Token ' + this.state.token);
-      request.addEventListener("readystatechange", () => {
-        if (request.readyState === 4 && request.status === 200) {
-          console.log(request.response);
-          return request;
-        }
-      });
-      request.send();
-
-    } else if (method === "POST") {
-      request.send(JSON.stringify(data));
-      request.onload = () => {
-        console.log(request.response);
-        this.setState({ token: request.response['key'] });
-      };
-    }
-  }
-
-  sendGet = (path) => {
-    this.sendRequest("GET", path, "");
-  }
-
-  sendPost = (path, data) => {
-    this.sendRequest("POST", path, data);
-  }
-*/

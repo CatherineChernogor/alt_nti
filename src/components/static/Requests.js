@@ -1,9 +1,9 @@
 export let state = {
   server: "http://139.162.141.55:8000",
-  token: "41cad6a8e57793becafa1b4037ac7d10f941634e",
+  token: "false",
   auth: {
-    username: "user",
-    password: "AdobeFlash"
+    username: "",
+    password: ""
   },
   tasks: {
     "data": [
@@ -96,50 +96,93 @@ export let state = {
   //markers: {}
 }
 
-export let sendGet = (path) => {
-  sendRequest("GET", path, "", state.token);
-}
+export let sendGet = async (path) => {
+  let response = await fetch(`${state.server}/api/0/${path}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+      'Authorization': 'Token ' + sessionStorage.token
+    },
+  });
 
-export let sendPost = (path, data) => {
-  sendRequest("POST", path, data, "");
-}
+  if (response.ok) {
+    let result = await response.json();
+    console.log(result);
 
-let sendRequest = (method, path, data, token) => {
-  let request = new XMLHttpRequest();
-  request.responseType = 'json';
-  request.open(method, `${state.server}/api/0/${path}`);
-  request.setRequestHeader('content-Type', 'application/json');
-
-  if (method === "GET") {
-    //console.log("token before get", state.token);
-    request.setRequestHeader('Authorization', 'Token ' + token);
-    request.addEventListener("readystatechange", () => {
-      if (request.readyState === 4 && request.status === 200) {
-        let answ = request.response;
-        if (path === "task/") state.tasks = answ;
-        else if (path === "contest/") state.contest = answ;
-        else if (path === "notification/") state.notifications = answ;
-        //else if (path ==="marker/") state.markers=answ;
-        else if (path === "answer/") state.answers = answ;
-        //console.log("true1", state);
-
-      }
-    });
-    request.send();
-
-  } else if (method === "POST") {
-    request.send(JSON.stringify(data));
-    request.onload = () => {
-      //console.log("true2", request.response);
-
-      if (request.response['key']) {
-        state.token = request.response['key'];
-        //console.log(state.token);
-      } else {
-        state.token = false;
-      }
-    };
+  } else {
+    alert("Ошибка HTTP: " + response.status);
   }
 }
 
 
+
+export let sendPost = async (path, data) => {
+
+  let response = await fetch(`${state.server}/api/0/${path}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(data)
+  });
+  let result = await response.json();
+
+  if (typeof result['key'] !== 'undefined') {
+    sessionStorage.setItem('token', result['key']);
+    return (result['key']);
+  }
+  else {
+    sessionStorage.setItem('token', false);
+    return false;
+  }
+}
+
+
+
+/*
+export let Get = (path) => {
+  let request = new XMLHttpRequest();
+  request.responseType = 'json';
+  request.open("GET", `${state.server}/api/0/${path}`);
+  request.setRequestHeader('content-Type', 'application/json');
+  request.setRequestHeader('Authorization', 'Token ' + sessionStorage.token);
+  request.addEventListener("readystatechange", () => {
+    if (request.readyState === 4 && request.status === 200) {
+      let answ = request.response;
+      if (path === "task/") state.tasks = answ;
+      else if (path === "contest/") state.contest = answ;
+      else if (path === "notification/") state.notifications = answ;
+      //else if (path ==="marker/") state.markers=answ;
+      else if (path === "answer/") state.answers = answ;
+      console.log("true1", state);
+
+    }
+  });
+  request.send();
+}
+
+export let Post = (path, data) => {
+
+  let request = new XMLHttpRequest();
+  request.responseType = 'json';
+  request.open("POST", `${state.server}/api/0/${path}`);
+  request.setRequestHeader('content-Type', 'application/json');
+  request.send(JSON.stringify(data));
+  request.addEventListener("readystatechange", () => {
+
+    if (request.readyState === 4 && request.status === 200) {
+
+      let token = request.response.key;
+      sessionStorage.setItem('token', token);
+      console.log(token);
+      return token;
+
+    } else {
+      //alert("try again");
+      sessionStorage.setItem('token', false);
+      return false;
+    }
+  });
+
+
+}*/

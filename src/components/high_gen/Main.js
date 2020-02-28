@@ -1,6 +1,6 @@
 import '../../App.css';
 import React from 'react';
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, Redirect } from "react-router-dom";
 
 import NavMenu from './fGround_comp/NavMenu';
 import Chat from './fGround_comp/Chat';
@@ -11,23 +11,26 @@ import Task from '../low_gen/Task';
 import Info from '../low_gen/Info';
 
 
+
 class Main extends React.Component {
 
-
+  constructor(){
+    super();
+    this.state ={
+      status: false
+    };
+  }  
   handler = () => {
     //this.props.sendGet("marker/");
-    //this.props.sendGet("contest/"); 
-    //this.props.sendGet("task/");
-    //this.props.sendGet("notification/"); 
-    //this.props.sendGet("answer/");
-  }
-  componentDidMount() {
-    setTimeout(this.handler, 5000);
+    this.props.sendGet("contest/");
+    this.props.sendGet("task/");
+    this.props.sendGet("notification/");
+    this.props.sendGet("answer/");
   }
 
   render() {
 
-    let tasks= this.props.state.tasks.data;
+    let tasks = this.props.state.tasks.data;
     let routeArray = tasks.map(
       (el) =>
         el.task.task_type === 1 ?
@@ -42,13 +45,13 @@ class Main extends React.Component {
       <div>
         <BrowserRouter>
           <NavMenu state={this.props.state} />
-          <Chat state={this.props.state}/>
+          <Chat state={this.props.state} />
           <Notification />
           <div className="content main">
-            <Points state={this.props.state}/>
+            <Points state={this.props.state} />
             {routeArray}
 
-            <Route path='/0/task' render={() => {}} />
+            <Route path='/0/task' component={Task} />
             <Route exact path='/0/info' component={Info} />
           </div>
         </BrowserRouter >
