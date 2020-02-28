@@ -11,10 +11,12 @@
     "bs-xmlhttprequest": "^0.1.7",
     "gh-pages": "^2.2.0",
     "history": "^4.10.1",
+    "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "scss": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",

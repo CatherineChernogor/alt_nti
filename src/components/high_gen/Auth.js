@@ -37,7 +37,7 @@ class Auth extends React.Component {
     let red = () => {
       if (this.state.redirect === true) {
         return (
-          <Redirect to="/0/task/1" from="/auth" />)
+          <Redirect to="/loader" from="/auth" />)
       }
       else {
         console.log("try again");

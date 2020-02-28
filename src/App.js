@@ -7,6 +7,7 @@ import Auth from './components/high_gen/Auth';
 import Main from './components/high_gen/Main';
 import Header from './components/high_gen/Header';
 import Footer from './components/high_gen/Footer';
+import Loader from './components/static/Loading';
 
 //import { state } from './components/static/Requests';
 
@@ -32,6 +33,12 @@ class App extends React.Component {
                 <Auth sendPost={this.props.sendPost} />} />
 
             <Redirect to='/auth' from = "/alt_nti"/>
+            
+            <Route
+              path='/loader'
+              render={() =>
+                <Loader />} />
+          
             <Route
               path='/0'
               render={() =>

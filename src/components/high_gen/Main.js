@@ -10,7 +10,7 @@ import Notification from './fGround_comp/Notification';
 import Task from '../low_gen/Task';
 import Info from '../low_gen/Info';
 
-import {sendGet} from '../static/Requests';
+import { sendGet } from '../static/Requests';
 
 
 
@@ -23,18 +23,16 @@ class Main extends React.Component {
     };
   }
   handler = async () => {
-    //sendGet("marker/");
+    let timer = await sendGet("contest/");
+    sendGet("answer/");
 
-     sendGet("contest/");
-     sendGet("task/");
-     sendGet("notification/");
-     sendGet("answer/");
- 
+    sendGet("task/");
+    sendGet("notification/");
+    console.log(timer);
+
   }
 
-  render() {
-
-    this.handler();
+  renderTasks = () => {
     let contest = JSON.parse(localStorage.getItem("contest"));
     let tasks = contest[0].tasks;
     let routeArray = tasks.map(
@@ -47,6 +45,11 @@ class Main extends React.Component {
             exact path={'/0/info/' + el.id}
             render={() => <Info title={el.title} text={el.text} />} />
     );
+    return routeArray;
+  }
+  render() {
+    this.handler();
+
     return (
       <div>
         <BrowserRouter>
@@ -55,10 +58,10 @@ class Main extends React.Component {
           <Notification />
           <div className="content main">
             <Points />
-            {routeArray}
 
+            {this.renderTasks()}
             <Route path='/0/task' component={Task} />
-            <Route exact path='/0/info' component={Info} />
+            <Route path='/0/info' component={Info} />
           </div>
         </BrowserRouter >
       </div>
