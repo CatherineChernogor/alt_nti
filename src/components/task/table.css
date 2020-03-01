@@ -13,7 +13,9 @@ tr:nth-child(even) {
 td {
     padding-top: 3px;
     padding-bottom: 3px;
+   
 }
+
 
 .data {
     padding-left: 10px;

@@ -1,18 +1,17 @@
 import '../../App.css';
 import React from 'react';
 
-import Table from './Table';
+import Table from './TableFun';
 
-class Task extends React.Component {
-    render() {
-        return (
-            <div >
-                <div className="heading2 title">{this.props.title}</div>
-                <div className="normal-text task">{this.props.text}</div>
-                <Table id={this.props.id}/>
-            </div>
-        );
-    }
+const Task = (props) => {
+    return (
+        <div >
+            <div className="heading2 title">{props.title}</div>
+            <div className="normal-text task">{props.text}</div>
+            <Table id={props.id} />
+        </div>
+    );
+
 }
 
 export default Task;

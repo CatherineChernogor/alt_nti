@@ -51,12 +51,14 @@ class Main extends React.Component {
   componentDidMount() {
 
 
-    setInterval(() => {
+    this.update = setInterval(() => {
       this.handler();
       this.setState({ isUpdated: false })
     }, 10000);
   }
-
+componentWillUnmount(){
+  clearInterval(this.update);
+}
 
   render() {
     return (

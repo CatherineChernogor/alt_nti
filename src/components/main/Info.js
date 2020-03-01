@@ -1,15 +1,14 @@
 import React from 'react';
 import '../../App.css';
 
-class Info extends React.Component {
-    render() {
-        return (
+const Info = (props) => {
+    return (
         <div className="main">
-            <div className="heading2 title">{this.props.title}</div>
-            <div className="normal-text">{this.props.text}</div>
+            <div className="heading2 title">{props.title}</div>
+            <div className="normal-text">{props.text}</div>
         </div>
-        );
-    }
+    );
+
 }
 
 export default Info;

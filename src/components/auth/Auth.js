@@ -1,6 +1,7 @@
 import '../../App.css';
 import React from 'react';
 import { Redirect } from "react-router-dom";
+import { sendPost } from '../../modules/Requests';
 
 class Auth extends React.Component {
   constructor() {
@@ -15,19 +16,17 @@ class Auth extends React.Component {
 
   onSubmitHandler = () => {
     (async () => {
-      let token = this.props.sendPost("auth/login/", {
+      let t = sendPost("auth/login/", {
         username: this.state.username,
         password: this.state.password
       });
-      let t = await token;
-      this.validateLogin(t);
+      let token = await t;
+      (token === sessionStorage.token && token) ?
+        this.setState({ redirect: true })
+        : this.setState({ redirect: false });
     })();
   }
 
-  validateLogin = (token) => {
-    (token === sessionStorage.token && token) ?
-      this.setState({ redirect: true }) : this.setState({ redirect: false });
-  }
   onChangeField = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -37,11 +36,10 @@ class Auth extends React.Component {
     let red = () => {
       if (this.state.redirect === true) {
         return (
-          <Redirect to="/loader" from="/auth" />)
+          <Redirect to="/0/task/1" from="/auth" />)
       }
       else {
         console.log("try again");
-        //return (<Redirect to="/auth" from="/auth" />) 
       }
     }
 
