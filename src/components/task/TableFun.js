@@ -4,23 +4,24 @@ import './table.css';
 
 import Line from './LineFun';
 
-const Table = () => {
+const Table = (props) => {
 
 
     let [answerArray, setAnswerArray] = useState();
 
     const answers = JSON.parse(localStorage.getItem("answers"));
-    
     useEffect(() => {
-        
+
         let answer = answers.map(
             (el) =>
-                el.error == null ?
-                    <Line key={el.id} text={el.data} date={el.date_send} error={null} result={el.result} />
-                    : <Line key={el.id} text={null} date={el.date_send} error={el.error} result={el.result} />
+                el.user_task === props.id ?
+                    el.error == null ?
+                        <Line key={el.id} text={el.data} date={el.date_send} error={null} result={el.result} points={props.points} />
+                        : <Line key={el.id} text={null} date={el.date_send} error={el.error} result={el.result} points={props.points} />
+                    : console.log(false)
         );
         setAnswerArray(answer);
-    }, []);
+    }, [props.id, props.points]);
 
 
     return (

@@ -1,77 +1,54 @@
-import React from 'react';
+"use strict";
+import React, { useState, useEffect } from 'react';
 
 import '../../../App.css';
 import './points.css';
 
 import Bar from './Bar';
 import Circle from './Circle';
+import Timer from './Timer';
+import { countScore, countWidth } from '../../../modules/countProcessing';
 
-class Points extends React.Component {
+const Points = (props) => {
 
-    constructor() {
-        super();
-        this.state = {
-            //test data 
-            score: "",
-            maxScore: "",
-            time: "20:20",
-            maxTime: "36:00",
-        }
-    }
-    countProgress = (score, maxScore) => {
-        return Math.ceil(score / maxScore * 100);
-    }
+    const TIME_DEFAULT = '0 00:00:00';
+    const DATE_DEFAULT = new Date();
 
-    countTime = (time, maxTime) => {
+    let [score, setScore] = useState(0);
+    let [maxScore, setMaxScore] = useState(0);
+    let [startTime, setStartTime] = useState(DATE_DEFAULT);
+    let [duration, setDuration] = useState(TIME_DEFAULT);
 
-        return 34;
-    }
-    
-    countScore = (where, what, which) => {
-        let score = 0;
-        where.forEach(el => {
-            score += el[what];
-        });
-        this.setState({ [which]: score });
-    }
+    useEffect(() => {
 
-
-    componentDidMount() {
-
-        let contest = JSON.parse(localStorage.getItem("contest"));
-        //let progress = this.props.state.tasks.data;
+        const contest = JSON.parse(localStorage.getItem("contest"));
         let progress = JSON.parse(localStorage.getItem("task"));
 
+        setStartTime(contest[0].date_start);
+        setDuration(contest[0].duration);
+        setScore(countScore(progress, 'real-time'));
+        setMaxScore(countScore(progress, 'max'));
 
-        this.countScore(progress, 'progress', 'score');
-        this.countScore(contest[0].tasks, 'points', 'maxScore');
+    }, [props.score]);
 
-
-        //let start_time = contest.date_start;
-        //let lasts = contest.duration;
-    }
-    render() {
-
-        return (
-            <div className="points">
-                <div className="bars">
-                    <Bar
-                        width={this.countProgress(this.state.score, this.state.maxScore)}
-                        color="#78d0ff"
-                        content={"Прогресс - " + this.countProgress(this.state.score, this.state.maxScore) + "%"}
-                    />
-                    <Bar
-                        width={this.countTime(this.state.time, this.state.maxTime)}
-                        color="#96c7cc"
-                        content={this.state.time}
-                    />
-                </div>
-                <Circle
-                    content={this.state.score}
+    return (
+        <div className="points">
+            <div className="bars">
+                <Bar
+                    width={countWidth(score, maxScore)}
+                    color="#78d0ff"
+                    content={"Прогресс - " + countWidth(score, maxScore) + "%"}
+                />
+                <Timer
+                    startTime={startTime}
+                    duration={duration}
                 />
             </div>
-        )
-    }
+            <Circle
+                content={score}
+            />
+        </div>
+    )
 }
 
 export default Points;

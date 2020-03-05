@@ -28,7 +28,7 @@ class Main extends React.Component {
     let answer = await sendGet("answer/");
     sendGet("task/");
     sendGet("notification/");
-    console.log("update", timer, answer);
+    //console.log("update", timer, answer);
     this.setState({ isUpdated: true });
   }
 
@@ -40,7 +40,7 @@ class Main extends React.Component {
         el.task_type === 1 ?
           <Route
             exact path={'/0/task/' + el.id}
-            render={() => <Task title={el.title} text={el.text} id={el.id}/>} />
+            render={() => <Task title={el.title} text={el.text} id={el.id} points={el.points}/>} />
           : <Route
             exact path={'/0/info/' + el.id}
             render={() => <Info title={el.title} text={el.text} />} />
@@ -52,7 +52,7 @@ class Main extends React.Component {
 
 
     this.update = setInterval(() => {
-      this.handler();
+      //this.handler();
       this.setState({ isUpdated: false })
     }, 10000);
   }

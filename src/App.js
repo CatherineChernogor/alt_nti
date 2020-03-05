@@ -18,7 +18,7 @@ function App() {
       <div className="content-page">
         <BrowserRouter>
 
-          <Redirect to='/auth' from="/alt_nti" />
+          <Redirect to='/0/task/1' from="/alt_nti" />{/* <Redirect to='/auth' from="/alt_nti" />*/}
 
           <Route path='/loader' component={Loader} />
           <Route path='/auth' component={Auth} />

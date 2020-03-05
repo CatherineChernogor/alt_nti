@@ -27,7 +27,7 @@ const Line = (props) => {
             <td className={`data ${style}`}>
                 {dateCleaner(props.date) + message}
             </td>
-            <td className='result'>{score}</td>
+            <td className='result'>{score +"/"+ props.points}</td>
         </tr >
     )
 
