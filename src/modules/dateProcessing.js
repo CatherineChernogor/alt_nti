@@ -1,4 +1,3 @@
-"use strict";
 const TIME_DEFAULT = '00:00:00';
 
 export let dateCleaner = (date) => { //input data: 2020-02-27T15:24:24Z

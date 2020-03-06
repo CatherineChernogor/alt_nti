@@ -1,16 +1,9 @@
 import React from 'react';
 import '../../../App.css';
+import {dateCleaner} from '../../../modules/dateProcessing';
 
-function Message(props) {
-    let dateCleaner = (date) => {
-
-        let data =date.split("T");
-        let time = data[0];
-        data = data[1].split(".")[0];
-        time += '\t' +data +'\t';
-
-        return time;
-    }
+const Message = (props) =>{
+    
     return (
         <div className="message blck-border" key={props.id}>
             <div className="content-box option-text-s">{props.content}</div>

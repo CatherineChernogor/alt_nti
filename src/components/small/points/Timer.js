@@ -1,5 +1,3 @@
-"use strict";
-
 import React, { useState, useEffect } from 'react';
 import { setTime, getTimeDiff, getDurationinSec } from '../../../modules/dateProcessing';
 import { countWidth } from '../../../modules/countProcessing';

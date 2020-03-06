@@ -1,5 +1,3 @@
-"use strict";
-
 export let countWidth = (variant, invariant) => {// input data: 56 200
     return Math.ceil(variant / invariant * 100);//output data: 28
 }
