@@ -5,7 +5,7 @@ import { Route, BrowserRouter } from "react-router-dom";
 import NavMenu from '../small/navigation/NavMenu';
 import Chat from '../small/chat/ChatFun';
 import Points from '../small/points/Points';
-import Notification from '../small/Notification';
+import Notification from '../small/NotificationFun';
 
 import Task from '../task/Task';
 import Info from '../main/Info';

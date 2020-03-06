@@ -21,7 +21,7 @@ const Table = (props) => {
                     : console.log(false)
         );
         setAnswerArray(answer);
-    }, [props.id, props.points]);
+    }, [props.id, props.points, ]);
 
 
     return (
