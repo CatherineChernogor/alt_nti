@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, BrowserRouter } from "react-router-dom";
 
 import NavMenu from '../small/navigation/NavMenu';
-import Chat from '../small/chat/Chat';
+import Chat from '../small/chat/ChatFun';
 import Points from '../small/points/Points';
 import Notification from '../small/Notification';
 
@@ -40,7 +40,7 @@ class Main extends React.Component {
         el.task_type === 1 ?
           <Route
             exact path={'/0/task/' + el.id}
-            render={() => <Task title={el.title} text={el.text} id={el.id} points={el.points}/>} />
+            render={() => <Task title={el.title} text={el.text} id={el.id} points={el.points} />} />
           : <Route
             exact path={'/0/info/' + el.id}
             render={() => <Info title={el.title} text={el.text} />} />
@@ -56,11 +56,12 @@ class Main extends React.Component {
       this.setState({ isUpdated: false })
     }, 10000);
   }
-componentWillUnmount(){
-  clearInterval(this.update);
-}
+  componentWillUnmount() {
+    clearInterval(this.update);
+  }
 
   render() {
+
     return (
       <div>
         <BrowserRouter>
