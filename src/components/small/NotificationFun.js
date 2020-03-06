@@ -50,3 +50,5 @@ const Notification = (props) => {
 }
 
 export default Notification;
+//test data
+let msg = "здесь будет или игра с кубитоклобусами или тест кто ты из них"

@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../../App.css';
 import '../../small/buttons.css';
 import style from '../../../modules/style';
 import Navigation from './NavigationFun';
 
 
-class NavMenu extends React.Component {
-    constructor() {
-        super()
-        this.state = { menu: false }
+const NavMenu = () => {
+
+    let [state, setState] = useState();
+
+    const openMenuBox = () => {
+        setState(true);
     }
-    openMenuBox = () => {
-        this.setState({ menu: true })
+    const closeMenuBox = () => {
+        setState(false);
     }
-    closeMenuBox = () => {
-        this.setState({ menu: false })
-    }
-    renderMenu = () => {
+    const RenderMenu = () => {
         return (
             <div className="screen">
 
@@ -31,7 +30,7 @@ class NavMenu extends React.Component {
 
                     <button
                         className='close-menu-btn option-text-m'
-                        onClick={this.closeMenuBox}>
+                        onClick={closeMenuBox}>
                         disable menu
                         </button>
                     <Navigation />
@@ -39,23 +38,19 @@ class NavMenu extends React.Component {
             </div>
         );
     }
-    renderBtn = () => {
+    const RenderBtn = () => {
         return (
             <div
                 className="btn open-menu-btn"
                 style={style.unabledElement}
-                onClick={this.openMenuBox}>
+                onClick={openMenuBox}>
 
             </div>
         );
     }
-    render() {
-        if (this.state.menu) {
-            return this.renderMenu();
-        } else {
-            return this.renderBtn();
-        }
-    }
+    return (
+        state ? <RenderMenu/> : <RenderBtn/>
+    );
 }
 
 export default NavMenu;
