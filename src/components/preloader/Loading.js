@@ -34,8 +34,13 @@ class Loading extends React.Component {
         let redirect = () => {
 
             if (this.state.isLoaded === true) {
-                console.log("redirecy");
-                return (<Redirect to="/0/task/1" from="/loader" />);
+
+                /*return (
+                    < Redirect to="/0/task/1" from="/loader" />
+                );*/
+                return (
+                    console.log("redirected")
+                );
             }
             else {
                 this.handler();

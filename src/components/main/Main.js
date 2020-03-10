@@ -1,6 +1,7 @@
 import '../../App.css';
 import React from 'react';
 import { Route, BrowserRouter } from "react-router-dom";
+import { sendGet } from '../../modules/Requests';
 
 import NavMenu from '../small/navigation/NavMenuFun';//hooks
 import Chat from '../small/chat/ChatFun';//hooks
@@ -9,9 +10,6 @@ import Notification from '../small/NotificationFun';//hooks
 
 import Task from '../task/Task';//hooks
 import Info from '../main/Info';//hooks
-
-import { sendGet } from '../../modules/Requests';
-
 
 
 class Main extends React.Component {
