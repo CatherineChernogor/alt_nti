@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import '../../../App.css';
 import { NavItemInfo, NavItemTask } from './NavItems';
 
-const Navigation = () => {
+const Navigation = (props) => {
 
-    let contest = JSON.parse(localStorage.getItem("contest"));
+    //let contest = JSON.parse(localStorage.getItem("contest"));
+    let contest = props.globalState.contest;
     let tasks = contest[0].tasks;
 
     let [taskArray, setTaskArray]  = useState();

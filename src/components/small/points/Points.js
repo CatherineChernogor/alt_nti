@@ -18,10 +18,16 @@ const Points = (props) => {
     let [startTime, setStartTime] = useState(DATE_DEFAULT);
     let [duration, setDuration] = useState(TIME_DEFAULT);
 
+    //console.log(props)
     useEffect(() => {
 
-        const contest = JSON.parse(localStorage.getItem("contest"));
-        let progress = JSON.parse(localStorage.getItem("task"));
+        //let contest = JSON.parse(localStorage.getItem("contest"));
+        let contest = props.globalState.contest;
+        //console.log(contest)
+
+        //let progress = JSON.parse(localStorage.getItem("task"));
+        let progress = props.globalState.tasks;
+        //console.log(progress)
 
         setStartTime(contest[0].date_start);
         setDuration(contest[0].duration);

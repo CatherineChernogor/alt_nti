@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../../App.css';
 import '../../small/buttons.css';
-import style from '../../../modules/style';
-import Navigation from './NavigationFun';
+import style from '../../modules/style';
+import Navigation from '../small/navigation/NavigationFun';
 
 
 class NavMenu extends React.Component {

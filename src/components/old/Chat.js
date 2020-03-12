@@ -2,9 +2,9 @@ import React from 'react';
 
 import '../../../App.css';
 import '../../small/buttons.css';
-import style from '../../../modules/style';
+import style from '../../modules/style';
 
-import Message from './Message';
+import Message from '../small/chat/Message';
 
 class Chat extends React.Component {
 

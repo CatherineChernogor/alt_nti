@@ -28,10 +28,10 @@ export let sendGet = async (path) => {
 }
 
 
-
 export let sendPost = async (path, data) => {
-
-  let response = await fetch(`${server}/api/0/${path}`, {
+const mock_path = "http://www.mocky.io/v2/5e688e222f0000975bd8ad5c"
+  //let response = await fetch(`${server}/api/0/${path}`, {
+    let response = await fetch(mock_path, {  
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8'
@@ -49,53 +49,3 @@ export let sendPost = async (path, data) => {
     return false;
   }
 }
-
-
-
-/*
-export let Get = (path) => {
-  let request = new XMLHttpRequest();
-  request.responseType = 'json';
-  request.open("GET", `${state.server}/api/0/${path}`);
-  request.setRequestHeader('content-Type', 'application/json');
-  request.setRequestHeader('Authorization', 'Token ' + sessionStorage.token);
-  request.addEventListener("readystatechange", () => {
-    if (request.readyState === 4 && request.status === 200) {
-      let answ = request.response;
-      if (path === "task/") state.tasks = answ;
-      else if (path === "contest/") state.contest = answ;
-      else if (path === "notification/") state.notifications = answ;
-      //else if (path ==="marker/") state.markers=answ;
-      else if (path === "answer/") state.answers = answ;
-      console.log("true1", state);
-
-    }
-  });
-  request.send();
-}
-
-export let Post = (path, data) => {
-
-  let request = new XMLHttpRequest();
-  request.responseType = 'json';
-  request.open("POST", `${state.server}/api/0/${path}`);
-  request.setRequestHeader('content-Type', 'application/json');
-  request.send(JSON.stringify(data));
-  request.addEventListener("readystatechange", () => {
-
-    if (request.readyState === 4 && request.status === 200) {
-
-      let token = request.response.key;
-      sessionStorage.setItem('token', token);
-      console.log(token);
-      return token;
-
-    } else {
-      //alert("try again");
-      sessionStorage.setItem('token', false);
-      return false;
-    }
-  });
-
-
-}*/

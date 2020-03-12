@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import './table.css';
 
-import Line from './LineFun';
+import Line from '../task/LineFun';
 
 class Table extends React.Component {
     

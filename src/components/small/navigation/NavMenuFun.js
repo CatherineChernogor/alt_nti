@@ -5,7 +5,7 @@ import style from '../../../modules/style';
 import Navigation from './NavigationFun';
 
 
-const NavMenu = () => {
+const NavMenu = (props) => {
 
     let [state, setState] = useState();
 
@@ -33,7 +33,7 @@ const NavMenu = () => {
                         onClick={closeMenuBox}>
                         disable menu
                         </button>
-                    <Navigation />
+                    <Navigation globalState={props.globalState}/>
                 </div>
             </div>
         );

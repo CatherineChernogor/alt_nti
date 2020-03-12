@@ -9,7 +9,9 @@ const Table = (props) => {
 
     let [answerArray, setAnswerArray] = useState();
 
-    const answers = JSON.parse(localStorage.getItem("answers"));
+    //console.log(props);
+    //const answers = JSON.parse(localStorage.getItem("answers"));
+    let answers = props.globalState.answers;
     useEffect(() => {
 
         let answer = answers.map(

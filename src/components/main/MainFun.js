@@ -1,60 +1,44 @@
 import '../../App.css';
-import React, { useState, useEffect } from 'react';
-import { Route, BrowserRouter } from "react-router-dom";
-import {useGlobal} from './GlobalState';
+import React, { useEffect } from 'react';
+import { BrowserRouter } from "react-router-dom";
 
 import NavMenu from '../small/navigation/NavMenuFun';//hooks
 import Chat from '../small/chat/ChatFun';//hooks
 import Points from '../small/points/Points';//hooks
 import Notification from '../small/NotificationFun';//hooks
-
-import Task from '../task/Task';//hooks
-import Info from './Info';//hooks
+import RenderTasks from '../task/RenderTasks';//hooks
 
 const Main = (props) => {
 
-  const [globalState, globalActions] = useGlobal();
 
-  useEffect(() => {
+    useEffect(() => {
+        setInterval(
+            async () => {
+
+                props.globalActions.updateContest();
+                props.globalActions.updateTasks();
+                props.globalActions.updateAnswers();
+                props.globalActions.updateNotifications();
+                props.globalActions.setIsUpdated(true);
+            }, 10000);
+        props.globalActions.setIsUpdated(false);
+
+    }, [props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications, props.globalState.IsUpdated])
 
 
-  }, [])
-
-  
-  return (
-    <div>
-      <BrowserRouter>
-        <NavMenu />
-        <Chat />
-        <Notification />
-        <div className="content main">
-          <Points />
-
-          <RenderTasks tasks={globalState.tasks} />
-          {/*<Route path='/0/task' component={Task} />*/}
-          <Route path='/0/info' component={Info} />
+    return (
+        <div>
+            <BrowserRouter>
+                <NavMenu globalState={props.globalState} />
+                <Chat globalState={props.globalState} />
+                <Notification />
+                <div className="content main">
+                    <Points globalState={props.globalState} />
+                    <RenderTasks tasks={props.globalState.tasks} globalState={props.globalState}/>
+                </div>
+            </BrowserRouter >
         </div>
-      </BrowserRouter >
-    </div>
-  );
+    );
 
 }
 export default Main;
-
-
-
-const RenderTasks = (props) => {
-
-  let tasks = props.tasks.map(//props.tasks
-    (el) =>
-      el.task_type === 1 ?
-        <Route
-          exact path={'/0/task/' + el.id}
-          render={() => <Task title={el.title} text={el.text} id={el.id} points={el.points} />} />
-        : <Route
-          exact path={'/0/info/' + el.id}
-          render={() => <Info title={el.title} text={el.text} />} />
-  );
-  return tasks;
-}
-

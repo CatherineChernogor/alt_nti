@@ -9,8 +9,8 @@ import Message from './Message';
 const Chat = (props) => {
 
     let [status, setStatus] = useState(false);
-    let messages = JSON.parse(localStorage.getItem("notifications"));
-
+    //let messages = JSON.parse(localStorage.getItem("notifications"));
+    let messages = props.globalState.notifications;
     const openChatBox = () => {
         setStatus(true);
     }
@@ -30,7 +30,7 @@ const Chat = (props) => {
         )
     }
     const RenderChat = (props) => {
-        
+
         let messageArray = props.messages.map(
             (el) => <Message key={el.id} content={el.text} date={el.date_send} />
         );

@@ -14,7 +14,7 @@ const Task = (props) => {
         <div >
             <div className="heading2 title">{props.title}</div>
             <div className="normal-text task">{props.text}</div>
-            <Table id={props.id} points={points} />
+            <Table id={props.id} points={points} globalState={props.globalState} />
         </div>
     );
 
