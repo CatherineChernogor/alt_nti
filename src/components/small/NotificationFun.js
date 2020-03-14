@@ -2,7 +2,8 @@ import React from 'react';
 import '../../App.css';
 import '../small/buttons.css';
 import style from '../../modules/style';
-import {useState} from 'react';
+import { useState } from 'react';
+import Game from "../game/game";
 
 const Notification = (props) => {
 
@@ -39,13 +40,16 @@ const Notification = (props) => {
                     <button className='btn not-close-btn' onClick={closeNotPanel}></button>
                     <div className='not-text normal-text'>{msg}</div>
                 </div>
+
+                <canvas id="canvas" width='200px' height='200px'>it is canvas</canvas>
+                <script src={Game}></script>
+                
             </div>
         );
     }
 
     return (
-       state ? <RenderBox/> : <RenderBtn/>
-    
+        state ? <RenderBox /> : <RenderBtn />
     );
 }
 

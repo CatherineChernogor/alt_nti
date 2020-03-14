@@ -19,11 +19,12 @@ const Main = (props) => {
                 props.globalActions.updateTasks();
                 props.globalActions.updateAnswers();
                 props.globalActions.updateNotifications();
-                props.globalActions.setIsUpdated(true);
+                //if (answer1 && answer2 && answer3 && answer4)
+                //  props.globalActions.setIsUpdated(true);
             }, 10000);
         props.globalActions.setIsUpdated(false);
 
-    }, [props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications, props.globalState.IsUpdated])
+    }, [props.globalActions, props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications, props.globalState.IsUpdated])
 
 
     return (
@@ -34,7 +35,7 @@ const Main = (props) => {
                 <Notification />
                 <div className="content main">
                     <Points globalState={props.globalState} />
-                    <RenderTasks tasks={props.globalState.tasks} globalState={props.globalState}/>
+                    <RenderTasks tasks={props.globalState.tasks} globalState={props.globalState} />
                 </div>
             </BrowserRouter >
         </div>

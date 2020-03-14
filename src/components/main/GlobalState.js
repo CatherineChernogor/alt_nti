@@ -142,21 +142,25 @@ const actions = {
         let contest = await sendGet("contest/");
         const newContestValue = await contest;
         store.setState({ contest: newContestValue });
+        return contest;
     },
     updateNotifications: async (store) => {
         let notifications = sendGet("notification/");
         const newNotificationsValue = await notifications;
         store.setState({ notifications: newNotificationsValue });
+        return notifications;
     },
     updateTasks: async (store) => {
         let tasks = await sendGet("task/");
         const newTasksValue = await tasks;
         store.setState({ tasks: newTasksValue });
+        return tasks;
     },
     updateAnswers: async (store) => {
         let answers = await sendGet("answer/");
         const newAnswersValue = await answers;
         store.setState({ answers: newAnswersValue });
+        return answers;
     },
     setIsLoaded: (store, value) => {
         store.setState({ isLoaded: value });

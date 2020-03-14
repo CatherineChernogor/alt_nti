@@ -4,6 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Table from './TableFun';
 
 const Task = (props) => {
+
+    //console.log(props);
+    
     let [points, setPoints] = useState("");
 
     useEffect(() => {
@@ -12,9 +15,9 @@ const Task = (props) => {
 
     return (
         <div >
-            <div className="heading2 title">{props.title}</div>
-            <div className="normal-text task">{props.text}</div>
-            <Table id={props.id} points={points} globalState={props.globalState} />
+            <div className="heading2 title">{props.task.title}</div>
+            <div className="normal-text task">{props.task.text}</div>
+            <Table id={props.task.id} points={points} globalState={props.globalState} />
         </div>
     );
 

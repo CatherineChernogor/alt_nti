@@ -15,7 +15,7 @@ const Loader = (props) => {
                 props.globalActions.setIsLoaded(true);
             }, 10000);
 
-    }, [props.globalState.isLoaded, props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications])
+    }, [props.globalActions, props.globalState.isLoaded, props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications])
 
 
     return (

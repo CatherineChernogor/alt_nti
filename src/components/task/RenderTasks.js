@@ -12,7 +12,7 @@ const RenderTasks = (props) => {
             el.task.task_type === 1 ?
                 <Route
                     exact path={'/0/task/' + el.id}
-                    render={() => <Task title={el.task.title} text={el.task.text} id={el.task.id} points={el.task.points} globalState={props.globalState} />} />
+                    render={() => <Task points={el.task.points} task={el.task} globalState={props.globalState} />} />
                 : <Route
                     exact path={'/0/info/' + el.id}
                     render={() => <Info title={el.task.title} text={el.task.text} />} />

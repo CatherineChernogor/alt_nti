@@ -21,19 +21,22 @@ const NavMenu = (props) => {
 
                 <div
                     className="gray-screen"
+                    onClick={closeMenuBox}
                     style={style.lowerElement}>
                 </div>
 
                 <div
                     className='nav-bar'
                     style={style.upperElement}>
-
+                    {/*
                     <button
                         className='close-menu-btn option-text-m'
                         onClick={closeMenuBox}>
                         disable menu
-                        </button>
-                    <Navigation globalState={props.globalState}/>
+                    </button>
+
+                    */}
+                    <Navigation globalState={props.globalState} />
                 </div>
             </div>
         );
@@ -49,7 +52,7 @@ const NavMenu = (props) => {
         );
     }
     return (
-        state ? <RenderMenu/> : <RenderBtn/>
+        state ? <RenderMenu /> : <RenderBtn />
     );
 }
 

@@ -34,7 +34,7 @@ const Points = (props) => {
         setScore(countScore(progress, 'real-time'));
         setMaxScore(countScore(progress, 'max'));
 
-    }, [props.score]);
+    }, [props.score, props.globalState.contest, props.globalState.tasks]);
 
     return (
         <div className="points">

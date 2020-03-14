@@ -44,6 +44,8 @@ const Chat = (props) => {
                 </button>
                 {messageArray}
             </div >
+
+
         );
     }
     return (<div className="chat">

@@ -11,9 +11,10 @@ const Table = (props) => {
 
     //console.log(props);
     //const answers = JSON.parse(localStorage.getItem("answers"));
-    let answers = props.globalState.answers;
+
     useEffect(() => {
 
+        let answers = props.globalState.answers;
         let answer = answers.map(
             (el) =>
                 el.user_task === props.id ?
@@ -23,7 +24,7 @@ const Table = (props) => {
                     : console.log(false)
         );
         setAnswerArray(answer);
-    }, [props.id, props.points, ]);
+    }, [props.id, props.points,props.globalState.answers]);
 
 
     return (
