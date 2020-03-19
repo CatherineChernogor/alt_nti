@@ -21,16 +21,14 @@ const Points = (props) => {
     //console.log(props)
     useEffect(() => {
 
-        //let contest = JSON.parse(localStorage.getItem("contest"));
+        //console.log(props.globalState.contest)
         let contest = props.globalState.contest;
-        //console.log(contest)
 
-        //let progress = JSON.parse(localStorage.getItem("task"));
         let progress = props.globalState.tasks;
-        //console.log(progress)
 
-        setStartTime(contest[0].date_start);
-        setDuration(contest[0].duration);
+
+        setStartTime(contest.date_start);
+        setDuration(contest.duration);
         setScore(countScore(progress, 'real-time'));
         setMaxScore(countScore(progress, 'max'));
 

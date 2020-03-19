@@ -11,19 +11,19 @@ import Main from './components/main/MainFun';
 import Header from './components/main/Header';//hooks
 import Footer from './components/main/Footer';//hooks
 import Loader from './components/preloader/LoaderFun';
-
+import Game from './components/game/gameClass';
 const App = () => {
 
-    const [globalState, globalActions] = useGlobal();
+    let [globalState, globalActions] = useGlobal();
 
     return (
         <div className="App">
             <Header />
             <div className="content-page">
                 <BrowserRouter>
-                    <Redirect to='/0/task/1' from="/alt_nti" />
+                    <Redirect to='/auth' from="/alt_nti" />
                     <Route
-                        path='/loader'
+                        path='/0/loader'
                         render={() =>
                             <Loader globalState={globalState} globalActions={globalActions} />
                         } />
@@ -37,6 +37,9 @@ const App = () => {
                         render={() =>
                             <Main globalState={globalState} globalActions={globalActions} />
                         } />
+
+                    <Route path='/game' render={() => <Game />} />
+
                 </BrowserRouter>
             </div>
             <Footer />

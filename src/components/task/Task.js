@@ -5,15 +5,15 @@ import Table from './TableFun';
 
 const Task = (props) => {
 
-    //console.log(props);
-    
     let [points, setPoints] = useState("");
-
     useEffect(() => {
+       
+        console.log(props)
         setPoints(props.points);
     }, [props.points]);
 
     return (
+
         <div >
             <div className="heading2 title">{props.task.title}</div>
             <div className="normal-text task">{props.task.text}</div>

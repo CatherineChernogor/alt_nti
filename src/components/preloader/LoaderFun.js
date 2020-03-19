@@ -4,32 +4,17 @@ import { Redirect } from 'react-router-dom';
 
 const Loader = (props) => {
 
-    useEffect(() => {
-        setInterval(
-            () => {
-
-                props.globalActions.updateContest();
-                props.globalActions.updateTasks();
-                props.globalActions.updateAnswers();
-                props.globalActions.updateNotifications();
-                props.globalActions.setIsLoaded(true);
-            }, 10000);
-
-    }, [props.globalActions, props.globalState.isLoaded, props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications])
-
+    useEffect(()=>{},[props.globalState.isLoaded]);
 
     return (
         <div>
-            {console.log(props.globalState.isLoaded)}
             {props.globalState.isLoaded ?
-                    <Redirect to="/0/task/1" from="/loader" />
+                    <Redirect to="/0/task/2" from="/0/loader" />
                     : <Animation />}
-
         </div>
     );
 }
 export default Loader;
-
 
 const Animation = () => {
     return (
@@ -44,6 +29,5 @@ const Animation = () => {
             <div className="item-8"><div></div></div>
             <div className="item-9"><div></div></div>
         </div>
-
     );
 }

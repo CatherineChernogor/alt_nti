@@ -31,6 +31,7 @@ const Chat = (props) => {
     }
     const RenderChat = (props) => {
 
+        console.log(props.messages);
         let messageArray = props.messages.map(
             (el) => <Message key={el.id} content={el.text} date={el.date_send} />
         );

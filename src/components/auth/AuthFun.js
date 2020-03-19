@@ -7,17 +7,22 @@ const Auth = (props) => {
 
     let usernameRef = useRef();
     let passwordRef = useRef();
- 
+
     const submitButton = async () => {
 
+        //console.log("submit-button-pressed")
         let t = sendPost("auth/login/", {
             username: usernameRef.current.value,
             password: passwordRef.current.value,
         });
         let token = await t;
-        (token) ?
-            props.globalActions.setIsAuth(true)
-            : props.globalActions.setIsAuth(false);
+        //console.log(token);
+        if (token) {
+            props.globalActions.setIsAuth(true);
+            sessionStorage.setItem('token', token.key);
+        } else {
+            props.globalActions.setIsAuth(false);
+        }
     };
 
     return (
@@ -39,13 +44,11 @@ export default Auth;
 
 const FormValid = (props) => {
 
-    useEffect(() => {
-
-    }, [props.isAuth])
+    useEffect(() => { }, [props.isAuth])
 
     if (props.isAuth) {
         return (
-            <Redirect to="/loader" from="/auth" />);
+            <Redirect to="/0/loader" from="/auth" />);
     }
     else if (props.isAuth === false) {
         return (

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "bs-xmlhttprequest": "^0.1.7",
+    "compose-promise": "^1.0.0",
     "gh-pages": "^2.2.0",
     "history": "^4.10.1",
     "node-sass": "^4.13.1",

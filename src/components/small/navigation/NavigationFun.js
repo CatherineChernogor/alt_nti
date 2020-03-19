@@ -4,18 +4,14 @@ import { NavItemInfo, NavItemTask } from './NavItems';
 
 const Navigation = (props) => {
 
-    //let contest = JSON.parse(localStorage.getItem("contest"));
-
-
     let [taskArray1, setTaskArray1] = useState();
     let [taskArray2, setTaskArray2] = useState();
     let [taskArray3, setTaskArray3] = useState();
 
 
     useEffect(() => {
-        //console.log(tasks)
         let contest = props.globalState.contest;
-        let tasks = contest[0].tasks;
+        let tasks = contest.tasks;
 
         let array1 = tasks.map(
             (el) => {

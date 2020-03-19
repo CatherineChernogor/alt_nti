@@ -1,0 +1,13 @@
+
+
+@keyframes walk {
+    from {
+        background-color: aquamarine;
+    }
+    50% {
+        background-color: red;
+    }
+    to {
+        background-color: black;
+    }
+}

@@ -3,7 +3,7 @@ import '../../App.css';
 import '../small/buttons.css';
 import style from '../../modules/style';
 import { useState } from 'react';
-import Game from "../game/game";
+import Game from "../game/gameClass";
 
 const Notification = (props) => {
 
@@ -41,9 +41,8 @@ const Notification = (props) => {
                     <div className='not-text normal-text'>{msg}</div>
                 </div>
 
-                <canvas id="canvas" width='200px' height='200px'>it is canvas</canvas>
-                <script src={Game}></script>
-                
+                <Game/>
+
             </div>
         );
     }
