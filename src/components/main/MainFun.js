@@ -16,11 +16,11 @@ const Main = (props) => {
 
             if (!props.globalState.isLoaded) loadData(props);
 
-            setInterval(() => {
-                updateData(props)
+            //setInterval(() => {
+                //updateData(props)
                 //console.log("rerender")
 
-            }, 10000)
+            //}, 10000)
             props.globalActions.setIsUpdated(false);
 
             //console.log(props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications)
