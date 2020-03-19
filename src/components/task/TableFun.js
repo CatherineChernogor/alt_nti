@@ -13,18 +13,19 @@ const Table = (props) => {
     //const answers = JSON.parse(localStorage.getItem("answers"));
 
     useEffect(() => {
-
+        //console.log(props.globalState);
         let answers = props.globalState.answers;
         let answer = answers.map(
-            (el) =>
-                el.user_task === props.id ?
-                    el.error == null ?
-                        <Line key={el.id} text={el.data} date={el.date_send} error={null} result={el.result} points={props.points} />
-                        : <Line key={el.id} text={null} date={el.date_send} error={el.error} result={el.result} points={props.points} />
-                    : console.log(false)
+            function (el) {
+                if (el.user_task === props.id) {
+                    if (el.error == null)
+                        return <Line key={el.id} text={el.data} date={el.date_send} error={null} result={el.result} points={props.points} />
+                    else return <Line key={el.id} text={null} date={el.date_send} error={el.error} result={el.result} points={props.points} />
+                }
+            }
         );
         setAnswerArray(answer);
-    }, [props.id, props.points,props.globalState.answers]);
+    }, [props.id, props.points, props.globalState.answers]);
 
 
     return (

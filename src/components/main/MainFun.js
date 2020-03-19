@@ -18,12 +18,12 @@ const Main = (props) => {
 
             setInterval(() => {
                 updateData(props)
-                console.log("rerender")
+                //console.log("rerender")
 
             }, 10000)
             props.globalActions.setIsUpdated(false);
 
-            console.log(props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications)
+            //console.log(props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications)
         }
     }, [
         props.globalActions,
@@ -61,17 +61,17 @@ let loadData = async (props) => {
     });
     var p2 = props.globalActions.updateTasks().then(function (value) {
         return value
-    });/*
+    });
     var p3 = props.globalActions.updateAnswers().then(function (value) {
         return value
     });
     var p4 = props.globalActions.updateNotifications().then(function (value) {
         return value
-    });*/
+    });
 
-    Promise.all([p1, p2]).then(val => {
-        console.log(val);
-        if (val[0] && val[1])
+    Promise.all([p1, p2, p3, p4]).then(val => {
+        //console.log(val);
+        if (val[0] && val[1] && val[2] && val[3])
             props.globalActions.setIsLoaded(true)
     })
 };
@@ -92,7 +92,7 @@ let updateData = async (props) => {
     });
 
     Promise.all([p1, p2, p3, p4]).then(val => {
-        console.log(val);
+        //console.log(val);
         if (val[0] && val[1] && val[2] && val[3])
             props.globalActions.setIsUpdated(true)
     })

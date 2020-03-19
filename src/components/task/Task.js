@@ -8,7 +8,7 @@ const Task = (props) => {
     let [points, setPoints] = useState("");
     useEffect(() => {
        
-        console.log(props)
+        //console.log(props)
         setPoints(props.points);
     }, [props.points]);
 
