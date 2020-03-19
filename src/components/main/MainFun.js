@@ -14,7 +14,8 @@ const Main = (props) => {
     useEffect(() => {
         if (props.globalState.isAuth) {
 
-            if (!props.globalState.isLoaded) loadData(props);
+            //if (!props.globalState.isLoaded) 
+            loadData(props);
 
             //setInterval(() => {
                 //updateData(props)
