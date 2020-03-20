@@ -1,11 +1,17 @@
 
 .Auth{
-    margin-top: 300px;
     display: flex;
+    margin-top: 150px;
     width: 100%;
     position: relative;
+    flex-direction: row;
   }
-  
+  .align-middle{
+    display: flex;
+    align-self: center;
+    margin: auto;
+    vertical-align: middle;
+  }
   .form-auth{
 
     display: flex;
@@ -16,7 +22,6 @@
   input{
     height: 30px;
     border-radius: 4px;
-  
   
   }
   .field{
@@ -35,6 +40,5 @@
     margin-left: auto;
     margin-right: auto;
     border: 0;
-  
   
   }

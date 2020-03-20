@@ -3,12 +3,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 
 :root {
   background-color: #fcfcfc;
   font: 400 12px 'Montserrat', sans-serif;
   color: #000000;
+
 }
 
 html, body {

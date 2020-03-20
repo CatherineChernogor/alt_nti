@@ -34,26 +34,23 @@ const Auth = (props) => {
     }, [props.isToken])
 
     return (
-        <div className="Auth" >
-            {
-                props.isToken && props.isLoaded ?
 
-                    <Redirect from="/auth" to="/0/task/2" />
+        props.isToken && props.isLoaded ?
 
-                    :
-                    <div>
-                        <form className="form-auth option-text-m">
+            <Redirect from="/auth" to="/0/task/2" />
+            :
+            <div className="Auth" >
+                <form className="form-auth align-middle option-text-m">
 
-                            <input type="text" ref={usernameRef} className='field' ></input>
-                            <input type="password" ref={passwordRef} className='field' ></input>
+                    <input type="text" ref={usernameRef} className='field' ></input>
+                    <input type="password" ref={passwordRef} className='field' ></input>
 
-                            <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
-                            <FormValid isAuth={props.isAuth} globalActions={props.globalActions} />
-                        </form>
-                        <img src={arstand} width="60%" alt="ar-stand" />
-                    </div>
-            }
-        </div>
+                    <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
+                    <FormValid isAuth={props.isAuth} globalActions={props.globalActions} />
+                </form>
+                <img className="align-middle" src={arstand} width="60%" alt="ar-stand" />
+            </div>
+
     );
 }
 export default Auth;

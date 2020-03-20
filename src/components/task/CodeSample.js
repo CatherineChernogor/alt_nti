@@ -9,8 +9,7 @@ const CodeSample = (props) => {
             <div>
                 <br></br>
                 <br></br>
-                <br></br>
-                <br></br>
+
                 <SyntaxHighlighter language="python" style={defaultStyle}>
                     {props.code}
                 </SyntaxHighlighter>

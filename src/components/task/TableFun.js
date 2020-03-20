@@ -29,8 +29,7 @@ const Table = (props) => {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
+
             <table className='option-text-m'>
                 <tbody>
                     <tr>
