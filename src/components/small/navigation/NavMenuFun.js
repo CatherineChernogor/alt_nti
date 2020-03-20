@@ -28,14 +28,7 @@ const NavMenu = (props) => {
                 <div
                     className='nav-bar'
                     style={style.upperElement}>
-                    {/*
-                    <button
-                        className='close-menu-btn option-text-m'
-                        onClick={closeMenuBox}>
-                        disable menu
-                    </button>
-
-                    */}
+                        <br></br>
                     <Navigation globalState={props.globalState} />
                 </div>
             </div>

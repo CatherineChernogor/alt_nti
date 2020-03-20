@@ -46,7 +46,7 @@ const Auth = (props) => {
                     <input type="password" ref={passwordRef} className='field' ></input>
 
                     <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
-                    <FormValid isAuth={props.isAuth} globalActions={props.globalActions} />
+                    <FormValid isAuth={props.isAuth} error={"invalid_data"} globalActions={props.globalActions} />
                 </form>
                 <img className="align-middle" src={arstand} width="60%" alt="ar-stand" />
             </div>

@@ -118,3 +118,12 @@
     margin-top: 70px;
     background-color: #fcfcfc;
 }
+
+.section{
+    padding: 2px;
+    padding-left: 3px;
+    font: 500 'Montserrat', sans-serif;}
+li{
+    padding: 1px;
+    padding-left: 7px;
+}

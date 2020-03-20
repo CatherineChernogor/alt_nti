@@ -54,15 +54,15 @@ const Navigation = (props) => {
     return (
         <div>
             <ul className="option-text-m">
-                Раздел 1
+                <div className="section">Компьютерное зрение</div>
                 {taskArray1}
             </ul>
             <ul className="option-text-m">
-                Раздел 2
+                <div className="section">Проективная геометрия</div>
                 {taskArray2}
             </ul>
             <ul className="option-text-m">
-                Раздел 3
+                <div className="section">Разработка приложения</div>
                 {taskArray3}
             </ul>
         </div>
