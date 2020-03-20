@@ -9,7 +9,7 @@ const Info = (props) => {
     }, []);
 
     return (
-        <div className="main">
+        <div className="">
             <div className="heading2 title">{props.title}</div>
             <div className="normal-text">{props.text}</div>
         </div>
