@@ -6,15 +6,15 @@ import Info from '../main/Info';
 
 const RenderTasks = (props) => {
 
-    let tasks = props.globalState.tasks.map(
+    let tasks = props.globalState.contest.tasks.map(
         (el) => 
-            el.task.task_type === 1 ?
+            el.task_type === 1 ?
             <Route
-                exact path={'/0/task/' + el.task.id}
-                render={() => <Task points={el.task.points} task={el.task} globalState={props.globalState} />} />
+                exact path={'/0/task/' + el.id}
+                render={() => <Task points={el.points} task={el} globalState={props.globalState} />} />
             : <Route
-                exact path={'/0/info/' + el.task.id}
-                render={() => <Info title={el.task.title} text={el.task.text} />} />
+                exact path={'/0/info/' + el.id}
+                render={() => <Info title={el.title} text={el.text} />} />
         
     );
     return tasks;

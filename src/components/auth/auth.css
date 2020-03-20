@@ -1,44 +1,49 @@
+.Auth {
+  display: flex;
+  margin-top: 150px;
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+}
 
-.Auth{
-    display: flex;
-    margin-top: 150px;
-    width: 100%;
-    position: relative;
-    flex-direction: row;
-  }
-  .align-middle{
-    display: flex;
-    align-self: center;
-    margin: auto;
-    vertical-align: middle;
-  }
-  .form-auth{
+.align-middle {
+  display: flex;
+  align-self: center;
+  margin: auto;
+  vertical-align: middle;
+}
 
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    margin: auto;
-  }
-  input{
-    height: 30px;
-    border-radius: 4px;
-  
-  }
-  .field{
-  
-    width: 200px;
-    margin: 5px;
-    padding-left: 5px;
-    border-width: 1px;
-    border-color: #BFBFBF;
-  }
-  
-  .submit-button{
-    margin: 10px;
-    width: 100px;
-    background-color: #78d0ff;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0;
-  
-  }
+.form-auth {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin: auto;
+}
+
+input {
+  height: 30px;
+  border-radius: 4px;
+}
+
+.field {
+  width: 200px;
+  margin: 5px;
+  padding-left: 5px;
+  border-width: 1px;
+  border-color: #BFBFBF;
+}
+
+.submit-button {
+  margin: 10px;
+  width: 100px;
+  background-color: #78d0ff;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0;
+}
+
+.align-column {
+  flex-direction: column;
+  display: flex;
+
+}
