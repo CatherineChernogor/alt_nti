@@ -1,7 +1,9 @@
-import '../../App.css';
-import React, { useEffect, useRef } from 'react';
-import { Redirect } from "react-router-dom";
+import './auth.css';
+import React, { useRef, useEffect, useState } from 'react';
 import { sendPost } from '../../modules/Requests';
+import FormValid from './FormValid';
+import { Redirect } from 'react-router-dom';
+import arstand from '../../img/AR-stand.jpg';
 
 const Auth = (props) => {
 
@@ -10,52 +12,48 @@ const Auth = (props) => {
 
     const submitButton = async () => {
 
-        //console.log("submit-button-pressed")
         let t = sendPost("auth/login/", {
             username: usernameRef.current.value,
             password: passwordRef.current.value,
         });
         let token = await t;
-        //console.log(token);
+
         if (token) {
             props.globalActions.setIsAuth(true);
             sessionStorage.setItem('token', token.key);
         } else {
             props.globalActions.setIsAuth(false);
         }
+
     };
+
+    useEffect(() => {
+        sessionStorage.getItem('token') !== null ?
+            props.globalActions.setIsToken(true)
+            : props.globalActions.setIsToken(false)
+    }, [props.isToken])
 
     return (
         <div className="Auth" >
+            {
+                props.isToken && props.isLoaded ?
 
-            <form className="form-auth option-text-m">
+                    <Redirect from="/auth" to="/0/task/2" />
 
-                <input type="text" ref={usernameRef} className='field' ></input>
-                <input type="password" ref={passwordRef} className='field' ></input>
+                    :
+                    <div>
+                        <form className="form-auth option-text-m">
 
-                <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
-                <FormValid isAuth={props.isAuth} globalActions={props.globalActions} />
-            </form>
+                            <input type="text" ref={usernameRef} className='field' ></input>
+                            <input type="password" ref={passwordRef} className='field' ></input>
+
+                            <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
+                            <FormValid isAuth={props.isAuth} globalActions={props.globalActions} />
+                        </form>
+                        <img src={arstand} width="60%" alt="ar-stand" />
+                    </div>
+            }
         </div>
     );
 }
 export default Auth;
-
-
-const FormValid = (props) => {
-
-    useEffect(() => { }, [props.isAuth])
-
-    if (props.isAuth) {
-        return (
-            <Redirect to="/0/loader" from="/auth" />);
-    }
-    else if (props.isAuth === false) {
-        return (
-            <div>try again</div>);
-    }
-    else if (props.isAuth === null) {
-        return (
-            <div> type your login/password </div>);
-    }
-}

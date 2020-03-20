@@ -14,17 +14,7 @@ const Main = (props) => {
     useEffect(() => {
         if (props.globalState.isAuth) {
 
-            //if (!props.globalState.isLoaded) 
             loadData(props);
-
-            //setInterval(() => {
-                //updateData(props)
-                //console.log("rerender")
-
-            //}, 10000)
-            props.globalActions.setIsUpdated(false);
-
-            //console.log(props.globalState.contest, props.globalState.tasks, props.globalState.answers, props.globalState.notifications)
         }
     }, [
         props.globalActions,
@@ -36,7 +26,7 @@ const Main = (props) => {
     return (
         <div>
             {
-                props.globalState.isLoaded ?
+                props.globalState.isLoaded  ?
                     <div>
                         <NavMenu globalState={props.globalState} />
                         <Chat globalState={props.globalState} />
@@ -71,12 +61,11 @@ let loadData = async (props) => {
     });
 
     Promise.all([p1, p2, p3, p4]).then(val => {
-        //console.log(val);
         if (val[0] && val[1] && val[2] && val[3])
             props.globalActions.setIsLoaded(true)
     })
 };
-
+/*
 let updateData = async (props) => {
 
     var p1 = props.globalActions.updateContest().then(function (value) {
@@ -93,8 +82,7 @@ let updateData = async (props) => {
     });
 
     Promise.all([p1, p2, p3, p4]).then(val => {
-        //console.log(val);
         if (val[0] && val[1] && val[2] && val[3])
             props.globalActions.setIsUpdated(true)
     })
-};
+};*/

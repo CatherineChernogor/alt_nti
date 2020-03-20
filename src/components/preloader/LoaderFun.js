@@ -8,7 +8,7 @@ const Loader = (props) => {
 
     return (
         <div>
-            {props.globalState.isLoaded ?
+            {props.globalState.isLoaded   ?
                     <Redirect to="/0/task/2" from="/0/loader" />
                     : <Animation />}
         </div>

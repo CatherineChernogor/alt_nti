@@ -30,7 +30,7 @@ const App = () => {
                     <Route
                         path='/auth'
                         render={() =>
-                            <Auth isAuth={globalState.isAuth} globalActions={globalActions} />
+                            <Auth isAuth={globalState.isAuth} isLoaded={globalState.isLoaded} isToken={globalState.isToken} globalActions={globalActions} />
                         } />
                     <Route
                         path='/0'

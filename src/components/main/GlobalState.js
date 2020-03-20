@@ -10,6 +10,7 @@ const initialState = {
     isUpdated: false,
     isLoaded: false,
     isAuth: null,
+    isToken: false,
 
 };
 
@@ -57,6 +58,10 @@ const actions = {
     setIsAuth: (store, value) => {
         store.setState({ isAuth: value });
     },
+    setIsToken: (store, value) => {
+        store.setState({ isAuth: value });
+    },
+    
 };
 
 export const useGlobal = globalHook(React, initialState, actions);

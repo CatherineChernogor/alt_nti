@@ -1,86 +1,45 @@
-
 .App {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    height: -webkit-fill-available;
-  }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  height: -webkit-fill-available;
+  overflow: auto;
+}
 
 .content-page {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
+
 /**************************************************************************/
 
-.Auth{
-    margin-top: 300px;
-    display: flex;
-    width: 100%;
-    position: relative;
-    
-  }
-  
-  .form-auth{
+footer {
+  height: 100px;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #BFBFBF;
+  bottom: 0;
+  flex: 0 0 auto
+}
 
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    margin: auto;
-  }
-  input{
-    height: 30px;
-    border-radius: 4px;
-  
-  
-  }
-  .field{
-  
-    width: 200px;
-    margin: 5px;
-    padding-left: 5px;
-    border-width: 1px;
-    border-color: #BFBFBF;
-  }
-  
-  .submit-button{
-    margin: 10px;
-    width: 100px;
-    background-color: #78d0ff;
-    margin-left: auto;
-    margin-right: auto;
-    border: 0;
-  
-  
-  }
-  /**************************************************************************/
-  
-  footer {
-    height: 100px;
-    width: 100%;
-    margin-top: 20px;
-    background-color: #BFBFBF;
-    bottom: 0;
-    flex: 0 0 auto;
-  }
-  
-  /**************************************************************************/
-  
-  header {
-    display: flex;
-    position: fixed;
-    height: 70px;
-    width: 100%;
-    background-color: black;
-    top: 0;
-  }
-  
-  .logo {
-    height: 50px;
-    width: 300px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 60px;
-    background-image: url('../../img/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+/**************************************************************************/
+
+header {
+  display: flex;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  top: 0;
+}
+
+.logo {
+  height: 50px;
+  width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 60px;
+  background-image: url('../../img/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
