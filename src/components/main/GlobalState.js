@@ -11,13 +11,12 @@ const initialState = {
     isLoaded: false,
     isAuth: null,
     isToken: false,
-
+    response: "",
 };
 
 const actions = {
     updateContest: async (store) => {
         const newValue = await sendGet("contest/");
-        //console.log(newValue.data[0]);
         store.setState({ contest: newValue.data[0] });
         if (newValue !== null && typeof newValue !== undefined)
             return true
@@ -48,7 +47,7 @@ const actions = {
         else
             return false
     },
-    
+
     setIsLoaded: (store, value) => {
         store.setState({ isLoaded: value });
     },
@@ -61,7 +60,10 @@ const actions = {
     setIsToken: (store, value) => {
         store.setState({ isAuth: value });
     },
-    
+    setResponse: (store, value) => {
+        store.setState({ response: value });
+    }
+
 };
 
 export const useGlobal = globalHook(React, initialState, actions);

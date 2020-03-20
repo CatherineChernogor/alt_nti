@@ -10,28 +10,23 @@ const Auth = (props) => {
     let usernameRef = useRef();
     let passwordRef = useRef();
 
+    var [res, setRes] = useState();
+
     const submitButton = async () => {
 
-        let t = sendPost("auth/login/", {
+        let r = sendPost("auth/login/", {
             username: usernameRef.current.value,
             password: passwordRef.current.value,
         });
-        let token = await t;
-
-        if (token) {
-            props.globalActions.setIsAuth(true);
-            sessionStorage.setItem('token', token.key);
-        } else {
-            props.globalActions.setIsAuth(false);
-        }
-
+        let response = await r;
+        setRes(response);
     };
 
     useEffect(() => {
         sessionStorage.getItem('token') !== null ?
             props.globalActions.setIsToken(true)
             : props.globalActions.setIsToken(false)
-    }, [props.isToken])
+    }, [props.isToken, props.globalActions])
 
     return (
 
@@ -46,7 +41,7 @@ const Auth = (props) => {
                     <input type="password" ref={passwordRef} className='field' ></input>
 
                     <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
-                    <FormValid isAuth={props.isAuth} error={"invalid_data"} globalActions={props.globalActions} />
+                    <FormValid isAuth={props.isAuth} response={res} globalActions={props.globalActions} />
                 </form>
                 <img className="align-middle" src={arstand} width="60%" alt="ar-stand" />
             </div>
