@@ -6,7 +6,6 @@ import Info from '../main/Info';
 
 const RenderTasks = (props) => {
 
-    console.log(props.globalState.tasks);
     let tasks = props.globalState.tasks.map(
         (el) => 
             el.task.task_type === 1 ?
