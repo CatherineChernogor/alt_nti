@@ -1,49 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import '../../../App.css';
 import { NavItemInfo, NavItemTask } from './NavItems';
+import Section from './Section';
 
 const Navigation = (props) => {
 
-    let [taskArray, setTaskArray] = useState();
-
+    let [sectionArray, setSectionArray] = useState();
 
     useEffect(() => {
         let contest = props.globalState.contest;
         let tasks = contest.tasks;
 
-        let array = tasks.map(
+        let taskBlocksArray = tasks.map(
+            (el) => el.task_block
+        )
+
+        taskBlocksArray = taskBlocksArray.filter((thing, index) => {
+            return index === taskBlocksArray.findIndex(obj => {
+                return JSON.stringify(obj) === JSON.stringify(thing);
+            });
+        });
+        
+        let sectionArray = taskBlocksArray.map(
             (el) => {
-                //if (el.task_block !== 3) {
-                    //console.log(el)
-                    if (el.task_type.id === 1)
-                        return <NavItemTask key={el.id} name={el.title} id={el.id} />
-                    else if (el.task_type.id === 2)
-                        return <NavItemInfo key={el.id} name={el.title} id={el.id} />
-                // }
-                // else return null;
+                console.log(el);
+                return (<Section task_block={el} globalState={props.globalState} />)
             }
-        );
-        setTaskArray(array);
+        )
+        setSectionArray(sectionArray);
+
     }, [props.globalState.contest]);
 
     return (
-        <div>
-            <Section taskArray={taskArray}/>
-        </div>
-    );
-
+        <div>{sectionArray}</div>);
 }
-
 export default Navigation;
-
-
-const SectionTitle = (props) => <div className="section">{props.title}</div>;
-
-const Section = (props) => {
-    return (
-        <ul className="option-text-m">
-            <SectionTitle title={"section 1"} />
-            {props.taskArray}
-        </ul>
-    )
-}
