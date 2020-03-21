@@ -11,7 +11,7 @@ const MainHandler = (props) => {
             loadData(props);
 
     }, [props.globalState.isAuth]);
-
+    console.log(props.globalState.contest)
     return (
         props.globalState.isLoaded ?
             <MainRender

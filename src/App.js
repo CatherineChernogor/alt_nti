@@ -15,7 +15,7 @@ import Game from './components/game/gameClass';
 const App = () => {
 
     let [globalState, globalActions] = useGlobal();
-    console.log(globalState);
+    
     return (
         <div className="App">
             <Header />

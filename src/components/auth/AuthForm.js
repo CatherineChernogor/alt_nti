@@ -8,8 +8,8 @@ const AuthForm = (props) => {
 
     let usernameRef = useRef();
     let passwordRef = useRef();
+    let [res, setRes] = useState();
 
-    var [res, setRes] = useState();
     const submitButton = async () => {
 
         let r = await sendPost("auth/login/", {
@@ -21,20 +21,14 @@ const AuthForm = (props) => {
     };
 
     useEffect(() => {
-        console.log(res);
 
         if (res !== undefined && Math.round(res.status / 100) === 2) {
-            console.log(true)
             props.globalActions.setIsAuth(true);
             sessionStorage.setItem('token', res.data.key);
         }
-        else {
-            console.log(false)
-
+        else
             props.globalActions.setIsAuth(false);
-        }
 
-        console.log(props.isAuth);
     }, [res, props.isAuth])
 
     return (
