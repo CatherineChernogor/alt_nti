@@ -9,8 +9,11 @@ export function sendGet(path) {
             'Authorization': 'Token ' + sessionStorage.token
         }
     }).then((result) => {
+        //console.log("ok", result.data);
         return result.data;
-    });
+    }).catch((error) => {
+        console.log("error", error.response);
+    })
 }
 
 export function sendPost(path, data) {

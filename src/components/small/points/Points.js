@@ -18,10 +18,8 @@ const Points = (props) => {
     let [startTime, setStartTime] = useState(DATE_DEFAULT);
     let [duration, setDuration] = useState(TIME_DEFAULT);
 
-    //console.log(props)
     useEffect(() => {
 
-        //console.log(props.globalState.contest)
         let contest = props.globalState.contest;
 
         let progress = props.globalState.tasks;

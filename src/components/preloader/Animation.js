@@ -1,20 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './preloader.scss';
-import { Redirect } from 'react-router-dom';
-
-const Loader = (props) => {
-
-    useEffect(()=>{},[props.globalState.isLoaded]);
-
-    return (
-        <div>
-            {props.globalState.isLoaded   ?
-                    <Redirect to="/0/task/2" from="/0/loader" />
-                    : <Animation />}
-        </div>
-    );
-}
-export default Loader;
 
 const Animation = () => {
     return (
@@ -30,4 +15,5 @@ const Animation = () => {
             <div className="item-9"><div></div></div>
         </div>
     );
-}
+};
+export default Animation;
