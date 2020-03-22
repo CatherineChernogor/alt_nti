@@ -47,3 +47,16 @@ input {
   border-width: 1px;
   border-color: #BFBFBF;
 }
+
+.logout-button{
+  display: absolute;
+  position: relative;
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+  background-color: #78d0ff;
+  border: 0;
+  top: 0px;
+  left: 1000px;
+  border-radius: 4px;
+}
