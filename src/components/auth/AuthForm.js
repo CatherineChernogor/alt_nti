@@ -32,17 +32,16 @@ const AuthForm = (props) => {
     }, [res, props.isAuth])
 
     return (
-        <div className="Auth" >
-            <form className="form-auth align-middle option-text-m">
-                <div className="align-column">
-                    <input type="text" ref={usernameRef} className='field' ></input>
-                    <input type="password" ref={passwordRef} className='field' ></input>
+        <div className="auth-block">
+            <form className="auth-form">
 
-                    <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
-                </div>
+                <input type="text" ref={usernameRef} className='field' ></input>
+                <input type="password" ref={passwordRef} className='field' ></input>
+                <input type="button" value="ВОЙТИ" className='submit-button' onClick={submitButton}></input>
+
                 <FormValid isAuth={props.isAuth} response={res} globalActions={props.globalActions} />
             </form>
-            <img className="align-middle" src={arstand} width="60%" alt="ar-stand" />
+            <img src={arstand} className="ar-stand-img"/>
         </div>
     );
 }

@@ -3,24 +3,12 @@ import ErrorHandler from './ErrorHandler';
 
 const FormValid = (props) => {
 
-    useEffect(() => {
-
-        /*if (typeof props.response !== typeof undefined &&
-            Math.round(props.response.status / 100) === 2 &&
-            ) {
-
-            props.globalActions.setIsAuth(true);
-            sessionStorage.setItem('token', props.response.data.key);
-        }
-        else {
-            props.globalActions.setIsAuth(false);
-        }
-        console.log("formvalid useeffect response ", props.response, "isA ", props.isAuth);
-*/
-    }, [props.isAuth, props.response, props.globalActions])
+    useEffect(() => { }, [props.isAuth, props.response])
 
     return (
-        <ErrorHandler response={props.response} />
+        <div className="auth-text option-text-m">
+            <ErrorHandler response={props.response} />
+        </div>
     )
 }
 export default FormValid;

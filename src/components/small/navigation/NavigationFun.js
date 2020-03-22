@@ -20,11 +20,12 @@ const Navigation = (props) => {
                 return JSON.stringify(obj) === JSON.stringify(thing);
             });
         });
-        
+
         let sectionArray = taskBlocksArray.map(
             (el) => {
-                console.log(el);
-                return (<Section task_block={el} globalState={props.globalState} />)
+                return (
+                    <Section task_block={el} globalState={props.globalState} />
+                )
             }
         )
         setSectionArray(sectionArray);

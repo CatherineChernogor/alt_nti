@@ -1,12 +1,14 @@
 import React from 'react';
-import Img from 'react-image';
+//import Img from 'react-image';
+import './table.css';
 
 const Image = (props) => {
     return (
         <div>
             <br></br>
             <br></br>
-            <Img width="400px" src={`//api.arstand-lab.ru${props.path}`} />
+            {/*<Img src={`//api.arstand-lab.ru${props.path}`} />*/}
+            <img src={`//api.arstand-lab.ru${props.path}`} />
         </div>
     )
 }

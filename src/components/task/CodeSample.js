@@ -5,7 +5,7 @@ import { defaultStyle } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const CodeSample = (props) => {
 
     return (
-        props.code !== null ?
+        props.code !== null && props.code !== "" ?
             <div>
                 <br></br>
                 <br></br>
