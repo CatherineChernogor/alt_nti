@@ -49,8 +49,7 @@ input {
 }
 
 .logout-button{
-  display: absolute;
-  position: relative;
+  position: fixed;
   margin: 10px;
   width: 100px;
   height: 50px;

@@ -1,17 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import '../../App.css';
+import ReactMarkdown from 'react-markdown';
 
 const Info = (props) => {
 
-    useEffect(() => {
+    const toMarkdownFormat = (text) => {
 
-        //console.log(props)
-    }, []);
+        while (text.includes("\n"))
+            text = text.replace("\n", "<br>");
 
+        while (text.includes("<br>"))
+            text = text.replace("<br>", "\n\n");
+
+        return text;
+    }
     return (
         <div className="">
             <div className="heading2 title">{props.title}</div>
-            <div className="normal-text">{props.text}</div>
+            <div className="normal-text">
+                <ReactMarkdown source={toMarkdownFormat(props.text)} />
+            </div>
         </div>
     );
 
