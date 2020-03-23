@@ -29,7 +29,7 @@ const AuthForm = (props) => {
         else
             props.globalActions.setIsAuth(false);
 
-    }, [res, props.isAuth])
+    }, [res, props.isAuth, props.globalActions])
 
     return (
         <div className="auth-block">
@@ -41,7 +41,7 @@ const AuthForm = (props) => {
 
                 <FormValid isAuth={props.isAuth} response={res} globalActions={props.globalActions} />
             </form>
-            <img src={arstand} className="ar-stand-img"/>
+            <img src={arstand} className="ar-stand-img" alt="ar-stand"/>
         </div>
     );
 }

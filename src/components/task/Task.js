@@ -30,11 +30,14 @@ const Task = (props) => {
         <div >
             <div className="heading2 title">{props.task.title}</div>
             <div className="normal-text task">
-                <ReactMarkdown source={toMarkdownFormat(props.task.text)}/>
+                <ReactMarkdown source={toMarkdownFormat(props.task.text)} />
             </div>
             <Image path={props.task.photo} />
             <CodeSample code={props.task.sample_code} />
-            <Table id={props.task.id} points={points} globalState={props.globalState} />
+            <Table
+                id={props.task.id}
+                points={points}
+                globalState={props.globalState} />
         </div>
     );
 

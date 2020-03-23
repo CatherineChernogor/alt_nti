@@ -30,7 +30,11 @@ const Points = (props) => {
         setScore(countScore(progress, 'real-time'));
         setMaxScore(countScore(progress, 'max'));
 
-    }, [props.score, props.globalState.contest, props.globalState.tasks]);
+    }, [
+        props.score, 
+        props.globalState.contest, 
+        props.globalState.tasks
+    ]);
 
     return (
         <div className="points">
@@ -38,7 +42,7 @@ const Points = (props) => {
                 <Bar
                     width={countWidth(score, maxScore)}
                     color="#78d0ff"
-                    content={"Прогресс - " + countWidth(score, maxScore) + "%"}
+                    content={`Прогресс - ${countWidth(score, maxScore)}%`}
                 />
                 <Timer
                     startTime={startTime}

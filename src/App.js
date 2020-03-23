@@ -11,7 +11,9 @@ import Main from './components/main/MainHandler';
 import Header from './components/main/Header';//hooks
 import Footer from './components/main/Footer';//hooks
 import Loader from './components/preloader/Loader';
-import Game from './components/game/gameClass';
+//import Game from './components/game/gameClass';
+//import InvalidBrowser from './components/main/InvalidBrowser';
+
 const App = () => {
 
     let [globalState, globalActions] = useGlobal();
@@ -44,8 +46,8 @@ const App = () => {
                                 globalActions={globalActions} />
                         } />
 
-                    <Route path='/game' render={() => <Game />} />
-
+                    {/*<Route path='/game' render={() => <Game />} />
+                    <Route path='/invalid' render={() => <InvalidBrowser />} />*/}
                 </BrowserRouter>
             </div>
             <Footer />

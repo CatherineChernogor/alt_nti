@@ -28,7 +28,7 @@ const NavMenu = (props) => {
                 <div
                     className='nav-bar'
                     style={style.upperElement}>
-                        <br></br>
+                    <br />
                     <Navigation globalState={props.globalState} />
                 </div>
             </div>

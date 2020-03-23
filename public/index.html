@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +22,92 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Altruist</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>Altruist</title>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+    }
+
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+    }
+
+
+    .invalid-browser {
+      display: block;
+      position: absolute;
+      background-color: #bfbfbf;
+
+      top: 40%;
+      left: 35%;
+      margin: auto;
+      padding: 30px;
+
+      height: 50px;
+      width: 400px;
+
+      justify-content: center;
+      text-align: center;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <script>
+    console.log(navigator);
+    console.log(navigator.userAgent);
+
+    var browser, uAgent = navigator.userAgent;
+
+    if (uAgent.indexOf("MSIE") > -1) {
+      browser = "Internet Explorer";
+    }
+    else if (uAgent.indexOf("Edge") > -1) {
+      browser = "Edge";
+    }
+    else if (uAgent.indexOf("Chrome") > -1) {
+      browser = "Chrome";
+    }
+    else if (uAgent.indexOf("Safari") > -1 && navigator.platform.indexOf("Mac") > -1) {
+      browser = "Safari";
+    }
+    else if (uAgent.indexOf("Firefox") > -1) {
+      browser = "Firefox";
+    }
+    console.log(browser);
+
+    if (browser === "Internet Explorer" || browser === "Edge" || browser === undefined) {
+
+      var div = document.createElement('div');
+      document.getElementById("root").appendChild(div);
+      div.classList.add("invalid-browser");
+
+      var str = "Ваш браузер устарел, обновите его или используйте Google Chrome, Firefox, Opera, Yandex Browser";
+      div.innerHTML = str;
+
+      console.log("if you see that page you have to change your browser to yandex google chome opera or firefox")
+
+    }
+
+
+
+  </script>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +117,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>

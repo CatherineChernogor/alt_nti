@@ -14,25 +14,22 @@ const Section = (props) => {
     let [taskArray, setTaskArray] = useState();
 
     useEffect(() => {
-        let contest = props.globalState.contest;
-        let tasks = contest.tasks;
+        let tasks = props.contest.tasks;
 
-        let array = tasks.map(
-            (el) => {
-                if (el.task_block.id === props.task_block.id && el.task_type.id === 1)
-                    return <NavItemTask
-                        key={el.id}
-                        name={el.title}
-                        id={el.id} />
-                else if (el.task_block.id === props.task_block.id && el.task_type.id === 2)
-                    return <NavItemInfo
-                        key={el.id}
-                        name={el.title}
-                        id={el.id} />
-            }
-        );
+        let array = tasks
+            .filter(el => el.task_block.id === props.task_block.id)
+            .map(el => el.task_type.id === 1
+                ? <NavItemTask
+                    key={el.id}
+                    name={el.title}
+                    id={el.id} />
+                : <NavItemInfo
+                    key={el.id}
+                    name={el.title}
+                    id={el.id} />
+            );
         setTaskArray(array);
-    }, [props.globalState.contest]);
+    }, [props.contest, props.task_block.id]);
 
     return (
         <ul className="option-text-m">

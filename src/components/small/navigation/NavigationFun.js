@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../../../App.css';
-import { NavItemInfo, NavItemTask } from './NavItems';
 import Section from './Section';
 
 const Navigation = (props) => {
@@ -22,11 +21,9 @@ const Navigation = (props) => {
         });
 
         let sectionArray = taskBlocksArray.map(
-            (el) => {
-                return (
-                    <Section task_block={el} globalState={props.globalState} />
-                )
-            }
+            (el) => <Section key={el.id}
+                task_block={el}
+                contest={props.globalState.contest} />
         )
         setSectionArray(sectionArray);
 

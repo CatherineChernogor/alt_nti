@@ -11,7 +11,7 @@ const initialState = {
     isLoaded: false,
     isAuth: null,
     isToken: false,
-    response: "",
+    response: ""
 };
 
 const actions = {

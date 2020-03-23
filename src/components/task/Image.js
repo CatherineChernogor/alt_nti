@@ -8,7 +8,7 @@ const Image = (props) => {
             <br></br>
             <br></br>
             {/*<Img src={`//api.arstand-lab.ru${props.path}`} />*/}
-            <img src={`//api.arstand-lab.ru${props.path}`} />
+            <img src={`//api.arstand-lab.ru${props.path}`} alt={`from${props.path}`}/>
         </div>
     )
 }

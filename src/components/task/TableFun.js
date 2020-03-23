@@ -9,7 +9,7 @@ const Table = (props) => {
     let [answerArray, setAnswerArray] = useState();
 
     useEffect(() => {
-        let answers = props.globalState.answers;
+        /*let answers = props.globalState.answers;
         let answer = answers.map(
             function (el) {
                 if (el.user_task === props.id) {
@@ -19,9 +19,27 @@ const Table = (props) => {
                         return <Line key={el.id} text={null} date={el.date_send} error={el.error} result={el.result} points={props.points} />
                 }
             }
-        );
+        );*/
+
+        let answer = props.globalState.answers
+            .filter(el => el.user_task === props.id)
+            .map(el => el.error == null
+                ? <Line
+                    key={el.id} text={el.data}
+                    date={el.date_send} error={null}
+                    result={el.result} points={props.points} />
+                : <Line
+                    key={el.id} text={null}
+                    date={el.date_send} error={el.error}
+                    result={el.result} points={props.points} />
+            );
+
         setAnswerArray(answer);
-    }, [props.id, props.points, props.globalState.answers]);
+    }, [
+        props.id,
+        props.points,
+        props.globalState.answers
+    ]);
 
 
     return (

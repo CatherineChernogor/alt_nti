@@ -8,10 +8,16 @@ const MainHandler = (props) => {
 
     useEffect(() => {
         if (props.globalState.isAuth || props.globalState.isToken)
-            loadData(props);
+            loadData(props.globalActions);
 
-    }, [props.globalState.isAuth]);
+    }, [
+        props.globalState.isAuth,
+        props.globalState.isToken,
+        props.globalActions
+    ]);
+
     //console.log(props.globalState.contest)
+
     return (
         props.globalState.isLoaded ?
             <MainRender
@@ -23,21 +29,21 @@ const MainHandler = (props) => {
 }
 export default MainHandler;
 
-let loadData = async (props) => {
+let loadData = async (action) => {
 
-    var p1 = props.globalActions.updateContest()
+    var p1 = action.updateContest()
         .then(function (value) {
             return value
         });
-    var p2 = props.globalActions.updateTasks()
+    var p2 = action.updateTasks()
         .then(function (value) {
             return value
         });
-    var p3 = props.globalActions.updateAnswers()
+    var p3 = action.updateAnswers()
         .then(function (value) {
             return value
         });
-    var p4 = props.globalActions.updateNotifications()
+    var p4 = action.updateNotifications()
         .then(function (value) {
             return value
         });
@@ -47,6 +53,6 @@ let loadData = async (props) => {
         //console.log("val", val);
 
         if (val[0] && val[1] && val[2] && val[3])
-            props.globalActions.setIsLoaded(true)
+            action.setIsLoaded(true)
     })
 };
