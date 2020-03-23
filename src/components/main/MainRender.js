@@ -10,6 +10,7 @@ import LogOut from '../auth/LogOut';
 
 const MainRender = (props) => {
 
+    
     return (
         <div>
             <NavMenu globalState={props.globalState} />

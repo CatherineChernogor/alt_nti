@@ -7,7 +7,7 @@ const initialState = {
     tasks: "",
     notifications: "",
     answers: "",
-    //isUpdated: false,
+    isUpdated: false,
     isLoaded: false,
     isAuth: null,
     isToken: false,
@@ -51,11 +51,9 @@ const actions = {
     setIsLoaded: (store, value) => {
         store.setState({ isLoaded: value });
     },
-    /*
     setIsUpdated: (store, value) => {
         store.setState({ isUpdated: value });
     },
-    */
     setIsAuth: (store, value) => {
         store.setState({ isAuth: value });
     },

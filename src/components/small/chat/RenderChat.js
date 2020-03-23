@@ -17,6 +17,7 @@ const RenderChat = (props) => {
             date={el.date_send} />
     );
     useEffect(() => {
+        props.setMessageAmount(props.messageAmount+props.unread);
         props.setUnread(0);
     }, []);
 
@@ -26,7 +27,7 @@ const RenderChat = (props) => {
             <button
                 className="close-chat-btn option-text-m"
                 onClick={closeChatBox}>
-                disable chat
+                закрыть уведомления
             </button>
             {messageArray}
         </div >
