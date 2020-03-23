@@ -52,8 +52,12 @@ input {
   position: fixed;
   margin: 10px;
   width: 100px;
+  text-align: center;
+  align-items: center;
   height: 50px;
-  background-color: #78d0ff;
+  /*background-color: #78d0ff;*/
+  color: white;
+  background-color: transparent;
   border: 0;
   top: 0px;
   left: 1000px;

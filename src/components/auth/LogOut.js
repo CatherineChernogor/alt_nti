@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './auth.css';
+import '../../App.css';
 import { Redirect } from 'react-router-dom';
 
 const LogOutRender = (props) => {
@@ -9,7 +10,7 @@ const LogOutRender = (props) => {
         props.globalAction.setIsToken(false);
     }
     return (
-        <button className="logout-button" onClick={handler}>LogOut</button>
+        <button className="logout-button heading3" onClick={handler}>LogOut</button>
     );
 }
 

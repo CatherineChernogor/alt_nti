@@ -2,57 +2,26 @@ import React, { useState } from 'react';
 
 import '../../../App.css';
 import '../../small/buttons.css';
-import style from '../../../modules/style';
 
-import Message from './Message';
+import RenderBtn from './RenderBtn';
+import RenderChat from './RenderChat';
 
 const Chat = (props) => {
 
     let [status, setStatus] = useState(false);
     let messages = props.globalState.notifications;
+    let [messageAmount, setMessageAmount] = useState(1);
+    let [unread, setUnread] = useState(messageAmount);
 
-    const openChatBox = () => {
-        setStatus(true);
-    }
-    const closeChatBox = () => {
-        setStatus(false);
-    }
-
-    const RenderBtn = () => {
-        return (
-            <div
-                className="btn open-chat-btn"
-                style={style.unabledElement}
-                onClick={openChatBox}>
-            </div>
-        )
-    }
-    const RenderChat = (props) => {
-
-        let messageArray = props.messages.map(
-            (el) => <Message
-                key={el.id}
-                content={el.text}
-                date={el.date_send} />
-        );
-
-        return (
-            <div className="chat-box blck-border">
-                <button
-                    className="close-chat-btn option-text-m"
-                    onClick={closeChatBox}>
-                    disable chat
-                </button>
-                {messageArray}
-            </div >
-
-
-        );
-    }
-    return (<div className="chat">
-        {status ? <RenderChat messages={messages} /> : <RenderBtn />}
-    </div>
+    return (
+        <div className="chat">
+            {status
+                ? <RenderChat messages={messages} setStatus={setStatus} setUnread={setUnread} />
+                : <RenderBtn setStatus={setStatus} unread={unread}/>}
+        </div>
     )
 }
 
 export default Chat;
+
+

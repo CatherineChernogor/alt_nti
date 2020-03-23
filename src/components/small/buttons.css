@@ -127,3 +127,16 @@ li{
     padding: 1px;
     padding-left: 7px;
 }
+
+.unread-amount{
+    display: block;
+    background-color: red;
+    color: aliceblue;
+    text-align: center;
+    justify-content: center;
+    
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 20px;
+}
