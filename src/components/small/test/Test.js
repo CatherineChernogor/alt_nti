@@ -1,11 +1,9 @@
 import React from 'react';
-import '../../App.css';
-import '../small/buttons.css';
-import style from '../../modules/style';
+import './test.css';
+import style from '../../../modules/style';
 import { useState } from 'react';
-import Game from "../game/gameClass";
 
-const Notification = (props) => {
+const Test = (props) => {
 
     let [state, setState] = useState(false);
 
@@ -41,8 +39,6 @@ const Notification = (props) => {
                     <div className='not-text normal-text'>{msg}</div>
                 </div>
 
-                <Game/>
-
             </div>
         );
     }
@@ -52,6 +48,6 @@ const Notification = (props) => {
     );
 }
 
-export default Notification;
+export default Test;
 //test data
 let msg = "здесь будет или игра с кубитоклобусами или тест кто ты из них";

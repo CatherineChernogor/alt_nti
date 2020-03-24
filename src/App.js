@@ -5,13 +5,11 @@ import React, { useEffect } from 'react';
 import { Route, BrowserRouter, Redirect } from "react-router-dom";
 import { useGlobal } from './components/main/GlobalState';
 
-
 import Auth from './components/auth/AuthHandler';
 import Main from './components/main/MainHandler';
-import Header from './components/main/Header';//hooks
-import Footer from './components/main/Footer';//hooks
+import Header from './components/main/Header';
+import Footer from './components/main/Footer';
 import Loader from './components/preloader/Loader';
-//import Game from './components/game/gameClass';
 
 const App = () => {
 
@@ -32,14 +30,19 @@ const App = () => {
     }, [
         globalState.isAuth,
         globalState.isToken,
+        globalState.isUpdated,
         globalActions
     ]);
 
     return (
         <div className="App">
-            <Header />
-            <div className="content-page">
-                <BrowserRouter>
+            <BrowserRouter>
+                <Header
+                    isAuth={globalState.isAuth}
+                    isToken={globalState.isToken}
+                    globalActions={globalActions} />
+                <div className="content-page">
+
                     <Redirect to='/auth' from="/alt_nti" />
                     <Route
                         path='/0/loader'
@@ -62,10 +65,8 @@ const App = () => {
                                 globalState={globalState}
                                 globalActions={globalActions} />
                         } />
-
-                    {/*<Route path='/game' render={() => <Game />} />*/}
-                </BrowserRouter>
-            </div>
+                </div>
+            </BrowserRouter>
             <Footer />
         </div >
     );

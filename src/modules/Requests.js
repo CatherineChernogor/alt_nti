@@ -9,7 +9,6 @@ export function sendGet(path) {
             'Authorization': 'Token ' + sessionStorage.token
         }
     }).then((result) => {
-        //console.log("ok", result.data);
         return result.data;
     }).catch((error) => {
         console.log("error", error.response);
@@ -23,12 +22,10 @@ export function sendPost(path, data) {
     return Axios.post(`${server}/api/0/${path}`, data, {
         headers
     }).then((result) => {
-
         return {
             status: result.status,
             data: result.data,
         }
-
     }).catch((error) => {
         if (typeof error.response !== typeof undefined)
             return {
@@ -39,6 +36,5 @@ export function sendPost(path, data) {
             status: 420,
             data: "check internet",
         }
-
     });
 }

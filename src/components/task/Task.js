@@ -1,15 +1,15 @@
-import '../../App.css';
 import React, { useState, useEffect } from 'react';
+import './task.css'
+
 import ReactMarkdown from 'react-markdown';
-
 import CodeSample from './CodeSample';
-
 import Table from './TableFun';
 import Image from './Image';
 
 const Task = (props) => {
 
     let [points, setPoints] = useState("");
+
     useEffect(() => {
         setPoints(props.points);
     }, [props.points]);
@@ -27,8 +27,11 @@ const Task = (props) => {
 
     return (
 
+
         <div >
+            {console.log(props.globalState)}
             <div className="heading2 title">{props.task.title}</div>
+            <div className="deadline small-text">{props.task.date_end}</div>
             <div className="normal-text task">
                 <ReactMarkdown source={toMarkdownFormat(props.task.text)} />
             </div>

@@ -1,7 +1,4 @@
 import React from 'react';
-
-import '../../../App.css';
-import '../../small/buttons.css';
 import style from '../../../modules/style';
 
 const RenderBtn = (props) => {

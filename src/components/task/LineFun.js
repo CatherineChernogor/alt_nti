@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {dateCleaner} from '../../modules/dateProcessing';
-import '../../App.css';
-import './table.css';
 
 const Line = (props) => {
 

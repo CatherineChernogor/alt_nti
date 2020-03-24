@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../App.css';
 import ReactMarkdown from 'react-markdown';
 
 const Info = (props) => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../App.css';
 import {dateCleaner} from '../../../modules/dateProcessing';
+import './chat.css';
 
 const Message = (props) =>{
     

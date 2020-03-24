@@ -1,8 +1,4 @@
 import React, { useEffect } from 'react';
-
-import '../../../App.css';
-import '../../small/buttons.css';
-
 import Message from './Message';
 
 const RenderChat = (props) => {
@@ -29,6 +25,7 @@ const RenderChat = (props) => {
                 onClick={closeChatBox}>
                 закрыть уведомления
             </button>
+           <Message key="-1" date="" content={`token: ${sessionStorage.getItem('token')}`} />
             {messageArray}
         </div >
 

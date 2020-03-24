@@ -13,9 +13,7 @@ tr:nth-child(even) {
 td {
     padding-top: 3px;
     padding-bottom: 3px;
-   
 }
-
 
 .data {
     padding-left: 10px;
@@ -33,9 +31,24 @@ td {
     color: #f80000;
 }
 
-img{
+img {
     width: 100%;
     height: auto;
     max-width: 800px;
     object-fit: cover;
+}
+
+.main {
+    padding-top: 70px;
+    background-color: #fcfcfc;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.title {
+    margin-top: 40px;
+}
+
+.task {
+    margin-top: 70px;
 }

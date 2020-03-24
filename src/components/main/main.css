@@ -30,6 +30,9 @@ header {
   width: 100%;
   background-color: black;
   top: 0;
+  justify-content: space-between;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .logo {
@@ -37,7 +40,6 @@ header {
   width: 300px;
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 60px;
   background-image: url('../../img/logo.png');
   background-size: contain;
   background-repeat: no-repeat;

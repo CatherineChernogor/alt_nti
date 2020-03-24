@@ -1,4 +1,3 @@
-
 const style = {
 
     txt4circle: {
@@ -19,15 +18,14 @@ const style = {
     text: {
         font: "400 24px 'Montserrat', sans-serif",
     },
-    upperElement:{
+    upperElement: {
         zIndex: "9999",
     },
-    lowerElement:{
+    lowerElement: {
         zIndex: "98",
     },
-    unabledElement:{
+    unabledElement: {
         zIndex: "0"
     }
 };
-
 export default style;

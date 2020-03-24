@@ -6,8 +6,9 @@ import { Redirect } from 'react-router-dom';
 const LogOutRender = (props) => {
 
     const handler = () => {
+        console.log(props);
         sessionStorage.removeItem('token');
-        props.globalAction.setIsToken(false);
+        props.globalActions.setIsToken(false);
     }
     return (
         <button className="logout-button heading3" onClick={handler}>LogOut</button>
@@ -17,14 +18,14 @@ const LogOutRender = (props) => {
 
 const LogOutHandler = (props) => {
 
-    useEffect(() => { }, [props.isToken]);
+    useEffect(() => { console.log(props)}, [props.isToken]);
 
     return (
 
-        props.isToken ?
+        props.isToken || props.isAuth ?
             <LogOutRender
                 isToken={props.isToken}
-                globalAction={props.globalAction} />
+                globalActions={props.globalActions} />
             :
             <Redirect to="/auth" />
     )

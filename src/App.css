@@ -62,20 +62,6 @@ html, body {
 
 /**************************************************************************/
 
-a {
-  text-decoration: none;
-  color: #000000;
-}
-
-a:hover {
-  background-color: #BFBFBF;
-}
-
-a:visited {
-  color: #000000;
-}
-
-/**************************************************************************/
 
 .main {
   padding-top: 70px;
@@ -90,36 +76,4 @@ a:visited {
 
 .task {
   margin-top: 70px;
-}
-
-/**************************************************************************/
-
-.message {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  background-color: #78d0ff;
-  border-radius: 10px;
-}
-
-.content-box {}
-
-.time-box {
-  display: flex;
-  margin-top: 5px;
-  justify-content: flex-end;
-}
-
-/********************************************/
-
-li {
-  margin-left: 10px;
-  padding: 2px;
-}
-
-ul {
-  margin-left: 5px;
-  list-style-type: none;
 }

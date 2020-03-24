@@ -1,35 +1,34 @@
 import React, { useState } from 'react';
-import '../../../App.css';
-import '../../small/buttons.css';
+import '../../small/common_buttons_styles.css';
 import style from '../../../modules/style';
-import Navigation from './NavigationFun';
+import './token.css'
 
 
 const NavMenu = (props) => {
 
     let [state, setState] = useState();
 
-    const openMenuBox = () => {
+    const openBox = () => {
         setState(true);
     }
-    const closeMenuBox = () => {
+    const closeBox = () => {
         setState(false);
     }
-    const RenderMenu = () => {
+    const RenderBox = () => {
         return (
             <div className="screen">
 
                 <div
                     className="gray-screen"
-                    onClick={closeMenuBox}
+                    onClick={closeBox}
                     style={style.lowerElement}>
                 </div>
 
                 <div
-                    className='nav-bar'
+                    className='token-field option-text-s'
                     style={style.upperElement}>
                     <br />
-                    <Navigation globalState={props.globalState} />
+                   token: {sessionStorage.getItem('token')}
                 </div>
             </div>
         );
@@ -37,15 +36,15 @@ const NavMenu = (props) => {
     const RenderBtn = () => {
         return (
             <div
-                className="btn open-menu-btn"
+                className="open-btn heading2"
                 style={style.unabledElement}
-                onClick={openMenuBox}>
-
+                onClick={openBox}>
+                    T
             </div>
         );
     }
     return (
-        state ? <RenderMenu /> : <RenderBtn />
+        state ? <RenderBox /> : <RenderBtn />
     );
 }
 

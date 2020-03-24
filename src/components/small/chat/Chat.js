@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-import '../../../App.css';
-import '../../small/buttons.css';
+import '../../small/common_buttons_styles.css';
 
 import RenderBtn from './RenderBtn';
 import RenderChat from './RenderChat';
@@ -21,7 +19,7 @@ const Chat = (props) => {
         props.globalState.notifications,
         messageAmount,
         unread,
-        props.amount]);
+        amount]);
 
     return (
         <div className="chat">

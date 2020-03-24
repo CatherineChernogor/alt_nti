@@ -2,11 +2,13 @@ const TIME_DEFAULT = '00:00:00';
 
 export let dateCleaner = (date) => { //input data: 2020-02-27T15:24:24Z
     let d = new Date(date);
-
+    if (date !=="")
     return (
         d.getFullYear() + '.' + d.getMonth() + '.' + d.getDate() + '\t'
         + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds() + '\t');
     //output data: 2020.02.24	16:41:31
+
+    else return ""
 }
 
 export let getTime = (date) => { //input data: 2020-02-27T15:24:24Z

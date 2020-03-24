@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../../../App.css';
 import Section from './Section';
 
 const Navigation = (props) => {

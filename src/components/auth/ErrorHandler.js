@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 
 const ErrorHandler = (props) => {
     if (props.response == null)
-        return ("type login and password");
+        return ("введите логин и пароль");
     else
         if (Math.round(props.response.status / 100) === 2)
             return (
@@ -11,10 +11,10 @@ const ErrorHandler = (props) => {
             );
         else
             if (props.response.status === 400)
-                return ("Bad Request: invalid data");
+                return ("некоректный логин или пароль");
             else
                 if (props.response.status === 420)
-                    return ("Check internet connection");
+                    return ("проверьте подключение к интернету");
                 else
                     if (props.response.status === 500)
                         return ("Internal Server Error");

@@ -1,4 +1,3 @@
-import './auth.css';
 import React, { useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import AuthForm from './AuthForm';

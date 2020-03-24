@@ -1,0 +1,31 @@
+.open-btn {
+    position: fixed;
+    display: flex;
+
+    width: 40px;
+    height: 40px;
+
+    float: right;
+    right: 80px;
+    bottom: 5px;
+
+    border-radius: 10px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+}
+.token-field{
+    position: fixed;
+    float: right;
+    right: 0px;
+    bottom: 0px;
+    height: 50px;
+    width: 400px;
+    text-align: center;
+    background-color: #fcfcfc;
+    border-radius: 5px 0 0 0;
+}

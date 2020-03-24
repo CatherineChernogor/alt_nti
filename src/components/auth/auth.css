@@ -15,7 +15,9 @@
   object-fit: cover;
 }
 
-.auth-text {}
+.auth-text {
+  text-align: center;
+}
 
 .auth-form {
   display: flex;
@@ -48,18 +50,17 @@ input {
   border-color: #BFBFBF;
 }
 
-.logout-button{
-  position: fixed;
-  margin: 10px;
+.logout-button {
+
   width: 100px;
+  height: 100%;
+
   text-align: center;
   align-items: center;
-  height: 50px;
-  /*background-color: #78d0ff;*/
+
   color: white;
   background-color: transparent;
+
   border: 0;
-  top: 0px;
-  left: 1000px;
   border-radius: 4px;
 }

@@ -69,8 +69,6 @@
   <div id="root"></div>
 
   <script>
-    console.log(navigator);
-    console.log(navigator.userAgent);
 
     var browser, uAgent = navigator.userAgent;
 
@@ -89,7 +87,6 @@
     else if (uAgent.indexOf("Firefox") > -1) {
       browser = "Firefox";
     }
-    console.log(browser);
 
     if (browser === "Internet Explorer" || browser === "Edge" || browser === undefined) {
 
@@ -99,8 +96,6 @@
 
       var str = "Ваш браузер устарел, обновите его или используйте Google Chrome, Firefox, Opera, Yandex Browser";
       div.innerHTML = str;
-
-      console.log("if you see that page you have to change your browser to yandex google chome opera or firefox")
 
     }
 
