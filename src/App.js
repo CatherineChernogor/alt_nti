@@ -19,8 +19,8 @@ const App = () => {
         if (globalState.isAuth || globalState.isToken) {
             if (globalState.isUpdated) {
                 setInterval(() => {
+
                     loadData(globalActions);
-                    console.log("rererender")
                 }, 60000)
             } else {
                 loadData(globalActions);
@@ -36,6 +36,8 @@ const App = () => {
 
     return (
         <div className="App">
+            {/*console.log("rerender app")*/}
+
             <BrowserRouter>
                 <Header
                     isAuth={globalState.isAuth}

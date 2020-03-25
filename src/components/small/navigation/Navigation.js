@@ -25,8 +25,11 @@ const Navigation = (props) => {
                 contest={props.globalState.contest} />
         )
         setSectionArray(sectionArray);
+        //console.log("rerender section")
 
-    }, [props.globalState.contest]);
+    }, [
+        props.globalState.contest
+    ]);
 
     return (
         <div>{sectionArray}</div>);

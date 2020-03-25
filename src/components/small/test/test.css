@@ -12,25 +12,47 @@
     margin-right: auto;
     margin-bottom: auto;
     background-image: url('../../../img/down-arrow.svg');
+
 }
 
 .msg-box {
     display: flex;
     position: fixed;
     flex-direction: column;
-    height: 60%;
-    width: 70%;
+    height: 30%;
+    width: 100%;
     bottom: 0;
-    border-radius: 5px 5px 0 0;
+    /*border-radius: 5px 5px 0 0;*/
     background-color: #fcfcfc;
 }
 
 .not-text {
     margin-bottom: auto;
-    padding: 0 50px;
+    padding-left: auto;
+    padding-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 20%;*/
 }
 
 .not-panel-align {
     align-items: center;
     justify-content: center;
+}
+.answer{
+    margin: 10px;
+    text-align: center;
+
+}
+.question{
+    margin: 15px;
+    text-align: center;
+}
+.test{
+
+}
+.result{
+    padding-left: 20%;
+    padding-right: 20%;
+
 }

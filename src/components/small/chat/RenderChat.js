@@ -25,8 +25,8 @@ const RenderChat = (props) => {
                 onClick={closeChatBox}>
                 закрыть уведомления
             </button>
-           <Message key="-1" date="" content={`token: ${sessionStorage.getItem('token')}`} />
-            {messageArray}
+           <Message key="-1" date="token" content={`Нажмите чтобы скопировать токен \n\n token:${sessionStorage.getItem('token')}`} />
+           {messageArray}
         </div >
 
 

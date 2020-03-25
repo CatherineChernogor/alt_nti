@@ -11,7 +11,7 @@ const initialState = {
     isLoaded: false,
     isAuth: null,
     isToken: false,
-    response: ""
+    response: "",
 };
 
 const actions = {
@@ -62,8 +62,8 @@ const actions = {
     },
     setResponse: (store, value) => {
         store.setState({ response: value });
-    }
-
+    },
+    
 };
 
 export const useGlobal = globalHook(React, initialState, actions);

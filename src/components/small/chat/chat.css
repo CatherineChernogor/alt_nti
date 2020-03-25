@@ -44,3 +44,11 @@
     height: 80%;
     border-radius: 4px 0 0 0;
 }
+
+.token-mess{
+  overflow: hidden;
+}
+
+.token-mess:active{
+  background-color: aliceblue;
+}

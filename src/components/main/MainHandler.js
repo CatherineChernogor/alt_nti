@@ -4,6 +4,7 @@ import Loader from '../preloader/Loader';
 import MainRender from './MainRender';
 
 const MainHandler = (props) => {
+    //console.log("rerender mainhandler")
 
     return (
         props.globalState.isLoaded ?

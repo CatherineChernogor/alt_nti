@@ -18,7 +18,7 @@ const LogOutRender = (props) => {
 
 const LogOutHandler = (props) => {
 
-    useEffect(() => { console.log(props)}, [props.isToken]);
+    //useEffect(() => { console.log(props)}, [props.isToken]);
 
     return (
 

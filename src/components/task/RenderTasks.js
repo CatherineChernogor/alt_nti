@@ -11,7 +11,7 @@ const RenderTasks = (props) => {
                 key={el.id}
                 exact path={'/0/task/' + el.id}
                 render={() =>
-                    <Task points={el.points} task={el} globalState={props.globalState} />} />
+                    <Task points={el.points} task={el} globalState={props.globalState} globalActions={props.globalActions}/>} />
             : <Route
                 key={el.id}
                 exact path={'/0/info/' + el.id}

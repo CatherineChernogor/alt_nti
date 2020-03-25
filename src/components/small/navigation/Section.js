@@ -28,7 +28,11 @@ const Section = (props) => {
                     id={el.id} />
             );
         setTaskArray(array);
-    }, [props.contest, props.task_block.id]);
+        //console.log("rerender sec")
+    }, [
+        props.contest, 
+        props.task_block.id
+    ]);
 
     return (
         <ul className="option-text-m">

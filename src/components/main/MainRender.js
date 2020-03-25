@@ -15,13 +15,14 @@ const MainRender = (props) => {
             <NavMenu globalState={props.globalState} />
             <Chat globalState={props.globalState} />
             <Test />
-            {/*<Token />*/}
+            {/*console.log("rerender mainrender")*/}
             <div className="content main">
 
                 <Points globalState={props.globalState} />
                 <RenderTasks
                     tasks={props.globalState.tasks}
-                    globalState={props.globalState} />
+                    globalState={props.globalState}
+                    globalActions={props.globalActions} />
             </div>
         </div>
     );
