@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-let server = "//api.arstand-lab.ru";
+let server = "https://api.arstand-lab.ru";
 
 export function sendGet(path) {
     return Axios.get(`${server}/api/0/${path}`, {

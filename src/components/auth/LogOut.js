@@ -6,7 +6,6 @@ import { Redirect } from 'react-router-dom';
 const LogOutRender = (props) => {
 
     const handler = () => {
-        console.log(props);
         sessionStorage.removeItem('token');
         props.globalActions.setIsToken(false);
     }
@@ -18,7 +17,7 @@ const LogOutRender = (props) => {
 
 const LogOutHandler = (props) => {
 
-    //useEffect(() => { console.log(props)}, [props.isToken]);
+    useEffect(() => {}, [props.isToken]);
 
     return (
 

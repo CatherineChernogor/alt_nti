@@ -11,8 +11,8 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: auto;
-    background-image: url('../../../img/down-arrow.svg');
-
+    background-image: url('../../../img/up-arrow.svg');
+    transform: rotateZ(180deg);
 }
 
 .msg-box {
@@ -22,7 +22,6 @@
     height: 30%;
     width: 100%;
     bottom: 0;
-    /*border-radius: 5px 5px 0 0;*/
     background-color: #fcfcfc;
 }
 
@@ -30,9 +29,8 @@
     margin-bottom: auto;
     padding-left: auto;
     padding-right: auto;
-    margin-left: auto;
-    margin-right: auto;
-    /*margin-top: 20%;*/
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .not-panel-align {
@@ -55,4 +53,16 @@
     padding-left: 20%;
     padding-right: 20%;
 
+}
+
+.answer:hover{
+    background-color:beige;
+}
+.answer:active{
+    background-color: bisque;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
 }

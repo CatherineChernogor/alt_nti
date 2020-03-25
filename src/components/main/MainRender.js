@@ -5,7 +5,6 @@ import Chat from '../small/chat/Chat';
 import Points from '../small/points/Points';
 import Test from '../small/test/Test';
 import RenderTasks from '../task/RenderTasks';
-import Token from '../small/token/token';
 
 const MainRender = (props) => {
 
@@ -15,7 +14,6 @@ const MainRender = (props) => {
             <NavMenu globalState={props.globalState} />
             <Chat globalState={props.globalState} />
             <Test />
-            {/*console.log("rerender mainrender")*/}
             <div className="content main">
 
                 <Points globalState={props.globalState} />

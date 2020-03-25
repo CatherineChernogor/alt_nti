@@ -28,7 +28,6 @@ const Section = (props) => {
                     id={el.id} />
             );
         setTaskArray(array);
-        //console.log("rerender sec")
     }, [
         props.contest, 
         props.task_block.id

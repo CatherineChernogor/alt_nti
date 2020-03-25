@@ -8,9 +8,9 @@ const Message = (props) => {
 
     return (
 
-        props.date === 'token' ?
+        props.date === 'token'
+            ?
             <div className="message token-mess blck-border" key={props.id}>
-
                 <CopyToClipboard text={sessionStorage.getItem('token')}>
                     <div className="content-box token-mess option-text-s"><ReactMarkdown source={props.content} /></div>
                 </CopyToClipboard>

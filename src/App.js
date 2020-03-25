@@ -21,7 +21,7 @@ const App = () => {
                 setInterval(() => {
 
                     loadData(globalActions);
-                }, 60000)
+                }, 300000)
             } else {
                 loadData(globalActions);
                 globalActions.setIsUpdated(true);

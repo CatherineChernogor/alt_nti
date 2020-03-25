@@ -6,7 +6,6 @@ const Table = (props) => {
     let [answerArray, setAnswerArray] = useState();
 
     useEffect(() => {
-        //console.log(props.globalState.answers)
 
         let answer = props.globalState.answers
             .filter(el => el.user_task.task.id === props.id)
@@ -20,8 +19,6 @@ const Table = (props) => {
                     date={el.date_send} error={el.error}
                     result={el.result} points={props.points} />
             );
-
-        //console.log(props.globalState.answers)
         setAnswerArray(answer);
     }, [
         props.id,

@@ -8,18 +8,43 @@ const Chat = (props) => {
 
     let [status, setStatus] = useState(false);
     let messages = props.globalState.notifications;
-    let [messageAmount, setMessageAmount] = useState(0);
-    let [unread, setUnread] = useState(messageAmount);
-    let amount = messages.length;
+
+    let [mes, setMes] = useState(0);
+    let [unread, setUnread] = useState(mes.length);
+    let [read, setRead] = useState(0);
 
     useEffect(() => {
-        
-        setUnread(amount - messageAmount);
+
+        if (messages != undefined) {
+
+
+            let messageIDArray = messages
+                .map((el) => el.id);
+            messageIDArray.unshift(-1);
+            messageIDArray = messageIDArray.filter((thing, index) => {
+                return index === messageIDArray.findIndex(obj => {
+                    return JSON.stringify(obj) === JSON.stringify(thing);
+                });
+            });
+            setMes(messageIDArray.length)
+        }
+
+
+        if (localStorage.getItem('read_messages') === null)
+            setRead(0);
+        else
+            setRead(JSON.parse(localStorage.getItem('read_messages')).length);
+
+        console.log(mes - read, "rerender")
+
+        setUnread(mes - read)
+
     }, [
-        props.globalState.notifications,
-        messageAmount,
+        messages,
         unread,
-        amount]);
+        read,
+        mes
+    ]);
 
     return (
         <div className="chat">
@@ -27,10 +52,8 @@ const Chat = (props) => {
                 ? <RenderChat
                     messages={messages}
                     setStatus={setStatus}
-                    unread={unread}
                     setUnread={setUnread}
-                    messageAmount={messageAmount}
-                    setMessageAmount={setMessageAmount} />
+                />
                 : <RenderBtn
                     setStatus={setStatus}
                     unread={unread} />}

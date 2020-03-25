@@ -62,17 +62,14 @@ const TestRender = () => {
     let [result, setResult] = useState('');
 
     let incrementRect = () => {
-        { console.log("rerender", rectangle, pyramid, cylinder, state, result) }
         setRectangle(rectangle++);
         setState(state++)
     }
     let incrementPyr = () => {
-        { console.log("rerender", rectangle, pyramid, cylinder, state, result) }
         setPyramid(pyramid++);
         setState(state++)
     }
     let incrementCyl = () => {
-        { console.log("rerender", rectangle, pyramid, cylinder, state, result) }
         setCylinder(cylinder++);
         setState(state++)
     }
@@ -83,7 +80,7 @@ const TestRender = () => {
             if (cylinder > pyramid && cylinder > rectangle) res = "Поздравляем, ты Цилиндр! Ты активный, веселый, шумный и никогда не унываешь. Энергия переполняет тебя, потому ты всегда первый рвешься на любое приключение. Ты стремишься к цели и радуешься жизни.";
             else if (pyramid > cylinder && pyramid > rectangle) res = "Поздравляем, ты Пирамидка! Ты многогранный и загадочный. От тебя стоит ожидать сюрпризов, ведь . Ты всегда мыслишь здраво и сохраняешь спокойствие в самой неожиданной ситуации, но при этом можешь удивить непредсказуемым решением.";
             else if (rectangle > pyramid && rectangle > cylinder) res = "Поздравляем, ты Расплывшийся. Ты бываешь везде, где успеваешь и где не успеваешь. С таким ритмом жизни скучать тебе не приходиться. Тебе не нужен сон и ты не боишься усталости, всегда готов к вечеринке.";
-            else res = "default";
+            else res = "Поздравляем, ты по-настоящему оригинальный кубидоклобус, в тебе сливаются в единое целое несколько кубидоклобусов! Ты готов к спонтанным приключениям, но всегда знаешь, когда нужно остановиться и поразмыслить. Можешь быть максимально продуктивным, но знаешь, как восстановить энергию.";
             setResult(res);
         }
 
@@ -92,28 +89,22 @@ const TestRender = () => {
     return (
         state !== 10 ?
             <div className="test">
-                <p>Пройди тест и узнай какой ты кубитоклобус</p>
+                <div className="header"><p>Пройди тест и узнай какой ты кубитоклобус </p><p>{state}/10</p></div>
                 <p className="question">{test_data[state][0]}</p>
                 <p
                     className="answer"
                     onClick={incrementRect}>
-
                     {test_data[state][1]}
-
                 </p>
                 <p
                     className="answer"
                     onClick={incrementPyr}>
-
                     {test_data[state][2]}
-
                 </p>
                 <p
                     className="answer"
                     onClick={incrementCyl}>
-
                     {test_data[state][3]}
-
                 </p>
             </div>
             :
