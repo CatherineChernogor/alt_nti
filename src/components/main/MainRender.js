@@ -3,7 +3,7 @@ import React from 'react';
 import NavMenu from '../small/navigation/NavMenu';
 import Chat from '../small/chat/Chat';
 import Points from '../small/points/Points';
-import Test from '../small/test/Test';
+import Test from '../small/test/TestBlock';
 import RenderTasks from '../task/RenderTasks';
 
 const MainRender = (props) => {

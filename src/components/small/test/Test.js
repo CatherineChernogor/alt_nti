@@ -1,177 +1,33 @@
-import React, { useEffect } from 'react';
-import './test.css';
-import style from '../../../modules/style';
-import { useState } from 'react';
+import React from 'react';
+import { test_data } from './test_data';
 
 const Test = (props) => {
 
-    let [state, setState] = useState(false);
-
-    const openNotPanel = () => {
-        setState(true);
-    }
-    const closeNotPanel = () => {
-        setState(false);
-    }
-
-    const RenderBtn = () => {
-        return (
-            <button
-                className="btn not-open-btn"
-                style={style.unabledElement}
-                onClick={openNotPanel}>
-
-            </button>
-        );
-    }
-    const RenderBox = () => {
-        return (
-            <div className="screen not-panel-align">
-                <div
-                    className="gray-screen"
-                    style={style.lowerElement}>
-                </div>
-
-                <div
-                    className='msg-box'
-                    style={style.upperElement}>
-                    <button className='btn not-close-btn' onClick={closeNotPanel}></button>
-                    <div className='not-text normal-text'>
-                        <TestRender />
-                    </div>
-                </div>
-
-            </div>
-        );
-    }
-
     return (
-        state ? <RenderBox /> : <RenderBtn />
-    );
-}
-
-export default Test;
-
-const TestRender = () => {
-
-
-    let [rectangle, setRectangle] = useState(0);
-    let [pyramid, setPyramid] = useState(0);
-    let [cylinder, setCylinder] = useState(0);
-    let [state, setState] = useState(0);
-    let [result, setResult] = useState('');
-
-    let incrementRect = () => {
-        setRectangle(rectangle++);
-        setState(state++)
-    }
-    let incrementPyr = () => {
-        setPyramid(pyramid++);
-        setState(state++)
-    }
-    let incrementCyl = () => {
-        setCylinder(cylinder++);
-        setState(state++)
-    }
-    useEffect(() => {
-
-        if (state === 10) {
-            let res;
-            if (cylinder > pyramid && cylinder > rectangle) res = "Поздравляем, ты Цилиндр! Ты активный, веселый, шумный и никогда не унываешь. Энергия переполняет тебя, потому ты всегда первый рвешься на любое приключение. Ты стремишься к цели и радуешься жизни.";
-            else if (pyramid > cylinder && pyramid > rectangle) res = "Поздравляем, ты Пирамидка! Ты многогранный и загадочный. От тебя стоит ожидать сюрпризов, ведь . Ты всегда мыслишь здраво и сохраняешь спокойствие в самой неожиданной ситуации, но при этом можешь удивить непредсказуемым решением.";
-            else if (rectangle > pyramid && rectangle > cylinder) res = "Поздравляем, ты Расплывшийся. Ты бываешь везде, где успеваешь и где не успеваешь. С таким ритмом жизни скучать тебе не приходиться. Тебе не нужен сон и ты не боишься усталости, всегда готов к вечеринке.";
-            else res = "Поздравляем, ты по-настоящему оригинальный кубидоклобус, в тебе сливаются в единое целое несколько кубидоклобусов! Ты готов к спонтанным приключениям, но всегда знаешь, когда нужно остановиться и поразмыслить. Можешь быть максимально продуктивным, но знаешь, как восстановить энергию.";
-            setResult(res);
-        }
-
-
-    }, [state])
-    return (
-        state !== 10 ?
-            <div className="test">
-                <div className="header"><p>Пройди тест и узнай какой ты кубитоклобус </p><p>{state}/10</p></div>
-                <p className="question">{test_data[state][0]}</p>
-                <p
-                    className="answer"
-                    onClick={incrementRect}>
-                    {test_data[state][1]}
-                </p>
-                <p
-                    className="answer"
-                    onClick={incrementPyr}>
-                    {test_data[state][2]}
-                </p>
-                <p
-                    className="answer"
-                    onClick={incrementCyl}>
-                    {test_data[state][3]}
-                </p>
+        <div className="test">
+            <div className="header">
+                <div className="question">{test_data[props.state][0]}</div>
+                <div className="question">{props.state}/10</div>
             </div>
-            :
-            <div>
-                {result}
-            </div>
+            <ul className="answers">
+                <li
+                    className="answer"
+                    onClick={props.action.incrementRect}>
+                    {test_data[props.state][1]}
+                </li>
+                <li
+                    className="answer"
+                    onClick={props.action.incrementPyr}>
+                    {test_data[props.state][2]}
+                </li>
+                <li
+                    className="answer"
+                    onClick={props.action.incrementCyl}>
+                    {test_data[props.state][3]}
+                </li>
+            </ul>
+        </div>
+
     )
 }
-let test_data = [
-    [
-        "Ты больше видишь себя",
-        "осторожным",
-        "непоследовательным",
-        "импульсивным"
-    ],
-    [
-        "Какой ты в душе?",
-        "мягкий, как подушка",
-        "загадочный",
-        "твердый, как камень"
-    ],
-    [
-        "Что выберешь?",
-        "кофе",
-        "чай",
-        "воду"
-    ],
-    [
-        "Про что ты расскажешь друзьям в первую очередь?",
-        "про шумную вечеринку",
-        "про забавную ситуацию",
-        "про интересную встречу",
-    ],
-    [
-        "Чем вы будете заниматься с друзьями?",
-        "слушать музыку",
-        "смотреть фильм",
-        "играть на гитаре"
-    ],
-    [
-        "Что ты оденешь на важное мероприятие?",
-        "оденусь как обычно",
-        "покажу свой стиль",
-        "буду блистать",
-    ],
-    [
-        "Как ты отреагируешь на преследователя?",
-        "исчезну",
-        "убегу",
-        "побью его"
-    ],
-    [
-        "Что привлечет твое внимание на вечеринке?",
-        "танцпол",
-        "стол с закусками",
-        "диджейский пульт"
-    ],
-    [
-        "Чему ты доверишься?",
-        "голосу разума",
-        "зову сердца",
-        "своему опыту"
-    ],
-    [
-        "Ты стал роботом.Твоя первая фраза:",
-        " кто я?",
-        "где я?",
-        "как выбраться?"
-    ]
-]
+export default Test;

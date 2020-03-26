@@ -35,7 +35,7 @@ const Chat = (props) => {
         else
             setRead(JSON.parse(localStorage.getItem('read_messages')).length);
 
-        console.log(mes - read, "rerender")
+        //console.log(mes - read, "rerender")
 
         setUnread(mes - read)
 

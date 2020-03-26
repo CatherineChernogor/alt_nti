@@ -1,10 +1,9 @@
-
 .not-open-btn {
     position: fixed;
     left: 50%;
-    transform: translateX(-50%);
     bottom: 0;
     background-image: url('../../../img/up-arrow.svg');
+    transform: translateX(-50%);
 }
 
 .not-close-btn {
@@ -19,50 +18,103 @@
     display: flex;
     position: fixed;
     flex-direction: column;
-    height: 30%;
+    height: 40%;
     width: 100%;
     bottom: 0;
     background-color: #fcfcfc;
 }
 
 .not-text {
-    margin-bottom: auto;
     padding-left: auto;
     padding-right: auto;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 0%;
+    margin-bottom: auto;
 }
 
 .not-panel-align {
     align-items: center;
     justify-content: center;
 }
-.answer{
-    margin: 10px;
-    text-align: center;
 
+.test-hint {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
-.question{
+
+.question {
     margin: 15px;
     text-align: center;
 }
-.test{
 
-}
-.result{
-    padding-left: 20%;
-    padding-right: 20%;
-
-}
-
-.answer:hover{
-    background-color:beige;
-}
-.answer:active{
-    background-color: bisque;
-}
-
-.header{
+.header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-right: 25%;
+
+}
+.answers{
+}
+.answer {
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 20px;
+    list-style-position: inside;
+    list-style-type: armenian;
+    margin-right: 25%;
+
+}
+
+.answer:hover {
+    background-color: antiquewhite;
+}
+
+.answer:active {
+    background-color: beige;
+}
+
+.test-result {
+    display: flex;
+    flex-direction: row;
+}
+
+.test-result-image {
+    height: auto;
+    width: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.test-result-text {
+    width: 50%;
+}
+
+.pyr {
+    background-image: url("./img/pyr.png");
+}
+
+.default {
+    background-image: url("./img/default.png");
+}
+
+.rect1 {
+    background-image: url("./img/rect1.png");
+}
+
+.rect2 {
+    background-image: url("./img/rect2.png");
+}
+
+.cyl1 {
+    background-image: url("./img/cyl1.png");
+}
+
+.cyl2 {
+    background-image: url("./img/cyl2.png");
 }
