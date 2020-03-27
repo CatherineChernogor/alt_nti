@@ -4,7 +4,7 @@ import style from '../../../modules/style';
 import { useState } from 'react';
 import TestRender from './TestRender';
 
-const TestBlock = (props) => {
+const TestBlock = () => {
 
     let [state, setState] = useState(false);
 
@@ -49,27 +49,13 @@ const RenderBox = (props) => {
 
 const RenderBtn = (props) => {
 
-    const showHint = ()=>{
-        let div = document.createElement('div');
-        div.classList.add('test-hint');
-        document.querySelector('.not-open-btn').appendChild(div);
-        console.log(document.querySelector('.content-page'));
-        div.innerHTML="Пройди тест и узнай какой ты кубитоклобус";
-    }
-
-    const closeHint =()=>{
-        document.querySelector('.test-hint').remove();
-    }
-
     return (
         <button
             className="btn not-open-btn"
             style={style.unabledElement}
             onClick={props.openNotPanel}
             title="Пройди тест и узнай какой ты кубитоклобус"
-            //onMouseOver={showHint}
-            //onMouseOut={closeHint}
-            >
+        >
 
         </button>
     );

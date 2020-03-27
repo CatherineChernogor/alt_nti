@@ -15,7 +15,7 @@ const Chat = (props) => {
 
     useEffect(() => {
 
-        if (messages != undefined) {
+        if (messages !== undefined) {
 
 
             let messageIDArray = messages

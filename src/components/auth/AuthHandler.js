@@ -15,7 +15,7 @@ const AuthHandler = (props) => {
 
     return (
         props.isToken ?
-            <Redirect from="/auth" to="/0/task/2" />
+            <Redirect from="/auth" to="/0/task/ok" />
             : <AuthForm
                 isAuth={props.isAuth}
                 globalActions={props.globalActions} />

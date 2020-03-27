@@ -8,8 +8,8 @@ import RenderTasks from '../task/RenderTasks';
 
 const MainRender = (props) => {
 
-
     return (
+        
         <div>
             <NavMenu globalState={props.globalState} />
             <Chat globalState={props.globalState} />

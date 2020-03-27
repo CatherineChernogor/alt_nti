@@ -1,17 +1,18 @@
 import React from 'react';
 
 import Loader from '../preloader/Loader';
-import MainRender from './MainRender';
+import MainRouterHandler from './MainRouterHandler';
 
 const MainHandler = (props) => {
-    //console.log("rerender mainhandler")
 
     return (
-        props.globalState.isLoaded ?
-            <MainRender
+        props.globalState.isLoaded
+            ?
+            <MainRouterHandler
                 globalState={props.globalState}
                 globalActions={props.globalActions} />
-            : <Loader isLoaded={props.globalState.isLoaded} />
+            :
+            <Loader isLoaded={props.globalState.isLoaded} />
     );
 
 }
