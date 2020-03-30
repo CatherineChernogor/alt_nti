@@ -6,8 +6,9 @@ const AuthHandler = (props) => {
 
     useEffect(() => {
 
-        if (sessionStorage.getItem('token') != null)
-            props.globalActions.setIsToken(true)
+        if (sessionStorage.getItem('token') != null){
+            props.globalActions.setIsToken(true);
+        }
         else
             props.globalActions.setIsToken(false)
 

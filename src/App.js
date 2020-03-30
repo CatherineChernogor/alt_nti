@@ -36,7 +36,7 @@ const App = () => {
 
     return (
         <div className="App">
-            {/*console.log("rerender app")*/}
+            {console.log(globalState)}
 
             <BrowserRouter>
                 <Header

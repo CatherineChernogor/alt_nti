@@ -8,6 +8,8 @@ const LogOutRender = (props) => {
     const handler = () => {
         sessionStorage.removeItem('token');
         props.globalActions.setIsToken(false);
+        props.globalActions.setIsAuth(false);
+
     }
     return (
         <button className="logout-button heading3" onClick={handler}>LogOut</button>

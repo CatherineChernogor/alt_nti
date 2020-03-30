@@ -62,7 +62,7 @@ const actions = {
     },
     setResponse: (store, value) => {
         store.setState({ response: value });
-    },
+    }
     
 };
 

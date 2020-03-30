@@ -8,6 +8,7 @@
 
 .content-page {
   flex: 1 0 auto;
+  /*margin-top: 70px;*/
 }
 
 /**************************************************************************/
@@ -43,4 +44,36 @@ header {
   background-image: url('../../img/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.contest-error-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  width: 450px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.footer-line {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.footer-logo {
+  width: auto;
+  height: 100%;
+  max-height: 20px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+.footer-line-text {
+  margin-left: 5px;
 }

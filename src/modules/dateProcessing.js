@@ -13,7 +13,7 @@ export let dateCleaner = (date) => { //input data: 2020-02-27T15:24:24Z
 
 export let getTime = (date) => { //input data: 2020-02-27T15:24:24Z
 
-    if (typeof date === undefined) {
+    if (date === undefined) {
         let d = new Date(date);
         return d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
         //output data: 16:41:31
@@ -23,7 +23,7 @@ export let getTime = (date) => { //input data: 2020-02-27T15:24:24Z
 
 export let getSeconds = (time) => {//input data: 16:41:31
 
-    if (typeof time !== undefined) {
+    if (time !== undefined) {
         let parts = time.split(':');
         let sec = 0;
         parts.forEach(element => {
