@@ -6,8 +6,6 @@ const Image = (props) => {
         <div>
             <br></br>
             <br></br>
-            {console.log(props.path)}
-
             <img src={`//api.arstand-lab.ru${props.path}`} alt={`from ${props.path}`}/>
         </div>
         :

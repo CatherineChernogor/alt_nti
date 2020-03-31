@@ -36,7 +36,6 @@ const App = () => {
 
     return (
         <div className="App">
-            {console.log(globalState)}
 
             <BrowserRouter>
                 <Header
