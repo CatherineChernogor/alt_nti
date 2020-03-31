@@ -4,7 +4,6 @@ import { sendGet } from '../../modules/Requests';
 
 const initialState = {
     contest: "",
-    tasks: "",
     notifications: "",
     answers: "",
     isUpdated: false,
@@ -26,14 +25,6 @@ const actions = {
     updateNotifications: async (store) => {
         let newValue = await sendGet("notification/");
         store.setState({ notifications: newValue.data });
-        if (newValue !== null && typeof newValue !== undefined)
-            return true
-        else
-            return false
-    },
-    updateTasks: async (store) => {
-        let newValue = await sendGet("task/");
-        store.setState({ tasks: newValue.data });
         if (newValue !== null && typeof newValue !== undefined)
             return true
         else

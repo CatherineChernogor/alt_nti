@@ -83,10 +83,10 @@ let loadData = async (action) => {
         .then(function (value) {
             return value
         });
-    var p2 = action.updateTasks()
+   /* var p2 = action.updateTasks()
         .then(function (value) {
             return value
-        });
+        });*/
     var p3 = action.updateAnswers()
         .then(function (value) {
             return value
@@ -96,9 +96,9 @@ let loadData = async (action) => {
             return value
         });
 
-    Promise.all([p1, p2, p3, p4]).then(val => {
+    Promise.all([p1, p3, p4]).then(val => {
 
-        if (val[0] && val[1] && val[2] && val[3])
+        if (val[0] && val[1] && val[2])
             action.setIsLoaded(true)
     })
 };

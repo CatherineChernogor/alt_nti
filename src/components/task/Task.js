@@ -30,7 +30,6 @@ const Task = (props) => {
 
 
         <div >
-            {/*console.log(props.globalState)*/}
             <div className="heading2 title">{props.task.title}</div>
             <div className="deadline small-text">{props.task.date_end}</div>
             <div className="normal-text task">
@@ -42,9 +41,6 @@ const Task = (props) => {
                 id={props.task.id}
                 points={points}
                 globalState={props.globalState} />
-            {/*console.log("task.id", props.task.id)}
-                {console.log("task", props.task)
-    */}
 
         </div>
     );
