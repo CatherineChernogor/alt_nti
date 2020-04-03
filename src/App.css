@@ -77,3 +77,17 @@ html, body {
 .task {
   margin-top: 70px;
 }
+
+p{
+  margin: 10px;
+}
+
+li{
+  list-style-position: inside;
+  list-style-type: initial;
+}
+
+li > p {
+  padding-left: 30px;
+  margin-top: -25px;
+}

@@ -6,8 +6,14 @@ import { Redirect } from 'react-router-dom';
 const MainHandler = (props) => {
 
 
-    if (props.globalState.contest !== undefined) {
+    if (props.globalState.contest === undefined) {
 
+        return (
+            <div className="heading3 contest-error-message">
+                У вас не назначен контест, пожалуйста подождите или обратитесь к администратору
+            </div>
+        )
+    } else {
         if (props.globalState.contest.tasks.length !== 0)
             return (
                 <div>
@@ -31,12 +37,6 @@ const MainHandler = (props) => {
                 </div>
             )
         }
-    } else {
-        return (
-            <div className="heading3 contest-error-message">
-                У вас не назначен контест, пожалуйста подождите или обратитесь к администратору
-            </div>
-        )
     }
 }
 export default MainHandler;

@@ -52,3 +52,7 @@
 .token-mess:active{
   background-color: aliceblue;
 }
+
+.message > .content-box > p {
+  margin: 0;
+}

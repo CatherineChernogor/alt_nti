@@ -9,8 +9,13 @@ li {
 
 .nav-menu-armenian{
     margin-left: 5px;
+    
+}
+
+.nav-menu-armenian > li {
     list-style-type: armenian;
     list-style-position: inside;
+    padding-left: 5px;
 }
 
 a {

@@ -75,5 +75,6 @@ header {
 }
 
 .footer-line-text {
+  margin: 0;
   margin-left: 5px;
 }

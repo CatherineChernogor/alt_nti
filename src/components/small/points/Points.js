@@ -26,9 +26,10 @@ const Points = (props) => {
 
         setStartTime(contest.date_start);
         setDuration(contest.duration);
-
+   
         setScore(countScore(progress, 'real-time'));
         setMaxScore(countScore(progress, 'max'));
+
 
     }, [
         props.score, 
