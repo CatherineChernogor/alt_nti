@@ -17,8 +17,6 @@ const Points = (props) => {
     let [startTime, setStartTime] = useState(DATE_DEFAULT);
     let [duration, setDuration] = useState(TIME_DEFAULT);
 
-    //console.log(props.globalState.contest)
-
     useEffect(() => {
 
         let contest = props.globalState.contest;

@@ -8,8 +8,6 @@ import App from './App';
 import ForMobile from './components/main/ForMobile';
 import * as serviceWorker from './serviceWorker';
 
-console.log(window.screen, window.screen.availWidth, window.screen.availHeight);
-
 if (window.screen.availWidth >= 700 && window.screen.availHeight >= 700)
     ReactDOM.render(<App />, document.getElementById('root'));
 else
