@@ -7,7 +7,7 @@ li {
     /*font-family: 'Inter', sans-serif;*/
 }
 
-ul {
+.nav-menu-armenian{
     margin-left: 5px;
     list-style-type: armenian;
     list-style-position: inside;

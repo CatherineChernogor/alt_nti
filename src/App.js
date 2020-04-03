@@ -13,8 +13,8 @@ import Loader from './components/preloader/Loader';
 
 const App = () => {
 
-
     let [globalState, globalActions] = useGlobal();
+    
 
     useEffect(() => {
         if (globalState.isAuth || globalState.isToken) {

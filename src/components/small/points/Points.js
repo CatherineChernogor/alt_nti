@@ -21,11 +21,12 @@ const Points = (props) => {
 
         let contest = props.globalState.contest;
 
-        let progress = props.globalState.contest.tasks;
+        let progress = contest.tasks;
 
 
         setStartTime(contest.date_start);
         setDuration(contest.duration);
+
         setScore(countScore(progress, 'real-time'));
         setMaxScore(countScore(progress, 'max'));
 

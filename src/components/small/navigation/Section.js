@@ -34,7 +34,7 @@ const Section = (props) => {
     ]);
 
     return (
-        <ul className="option-text-m">
+        <ul className="option-text-m nav-menu-armenian">
             <SectionTitle name={props.task_block.name} />
             {taskArray}
         </ul>
