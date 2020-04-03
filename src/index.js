@@ -8,10 +8,10 @@ import App from './App';
 import ForMobile from './components/main/ForMobile';
 import * as serviceWorker from './serviceWorker';
 
-if (window.screen.availWidth >= 700 && window.screen.availHeight >= 700)
-    ReactDOM.render(<App />, document.getElementById('root'));
-else
+if (window.screen.width < 650 || window.screen.height < 650)
     ReactDOM.render(<ForMobile />, document.getElementById('root'));
+else
+    ReactDOM.render(<App />, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
