@@ -13,6 +13,7 @@ import Loader from './components/preloader/Loader';
 
 const App = () => {
 
+
     let [globalState, globalActions] = useGlobal();
 
     useEffect(() => {
@@ -83,10 +84,6 @@ let loadData = async (action) => {
         .then(function (value) {
             return value
         });
-   /* var p2 = action.updateTasks()
-        .then(function (value) {
-            return value
-        });*/
     var p3 = action.updateAnswers()
         .then(function (value) {
             return value
