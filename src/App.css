@@ -3,14 +3,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
 }
 
 :root {
   background-color: #fcfcfc;
   font: 400 12px 'Montserrat', sans-serif;
   color: #000000;
-
 }
 
 html, body {
@@ -62,12 +60,10 @@ html, body {
 
 /**************************************************************************/
 
-
 .main {
   padding-top: 70px;
   background-color: #fcfcfc;
-  margin-left: 20%;
-  margin-right: 20%;
+
 }
 
 .title {
@@ -78,16 +74,37 @@ html, body {
   margin-top: 70px;
 }
 
-p{
+p {
   margin: 10px;
 }
 
-li{
+li {
   list-style-position: inside;
   list-style-type: initial;
 }
 
-li > p {
+li>p {
   padding-left: 30px;
   margin-top: -25px;
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1000px){
+  .main {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1500px){
+  .main {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+@media only screen and (min-width: 1500px){
+  .main {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
