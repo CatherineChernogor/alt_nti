@@ -68,6 +68,7 @@ html, body {
 
 .title {
   margin-top: 40px;
+  margin-bottom: 15px;
 }
 
 .task {
@@ -93,6 +94,10 @@ li>p {
     margin-left: 10%;
     margin-right: 10%;
   }
+  header {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 @media only screen and (min-width: 1000px) and (max-width: 1500px){
@@ -100,11 +105,19 @@ li>p {
     margin-left: 20%;
     margin-right: 20%;
   }
+  header {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
 }
 
 @media only screen and (min-width: 1500px){
   .main {
     margin-left: 25%;
     margin-right: 25%;
+  }
+  header {
+    padding-left: 25%;
+    padding-right: 25%;
   }
 }

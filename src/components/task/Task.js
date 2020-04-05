@@ -30,7 +30,10 @@ const Task = (props) => {
 
 
         <div >
-            <div className="heading2 title">{props.task.title}</div>
+            <div className="">
+                <div className="heading2 title">{props.task.title}</div>
+                <div className="normal-text">Максимальное количество баллов - {props.task.points} </div>
+            </div>
             <div className="deadline small-text">{props.task.date_end}</div>
             <div className="normal-text task">
                 <ReactMarkdown source={toMarkdownFormat(props.task.text)} />
