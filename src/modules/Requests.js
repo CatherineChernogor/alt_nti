@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-let server = "https://api.arstand-lab.ru";
+let server = "//api.arstand-lab.ru";
 let server_502 = "https://api.arstand-lab.ru/api/502/";
 let server_500 = "https://api.arstand-lab.ru/api/500/";
 
@@ -37,7 +37,7 @@ export function sendPost(path, data) {
             }
         })
         .catch((error) => {
-            console.log("post error ",error.response.status);
+            //console.log("post error ",error.response.status);
             if (typeof error.response !== typeof undefined)
                 return {
                     status: error.response.status,
