@@ -2,9 +2,12 @@ import React from 'react';
 import { Redirect } from "react-router-dom";
 
 const ErrorHandler = (props) => {
+
     if (props.response == null)
         return ("введите логин и пароль");
-    else
+    else {
+        console.log("error " + props.response.status);
+        console.log(props.response.data);
         if (Math.round(props.response.status / 100) === 2)
             return (
                 <Redirect to="/0/loader" from="/auth" />
@@ -16,21 +19,10 @@ const ErrorHandler = (props) => {
                 if (props.response.status === 420)
                     return ("проверьте подключение к интернету");
                 else
-                    if (props.response.status === 500)
-                        return ("Internal Server Error");
+                    if (Math.round(props.response.status / 100) !== 2)
+                        return (`Error ${props.response.status}`)
                     else
-                        if (props.response.status === 502)
-                            return ("Bad Gateway");
-                        else
-                            if (props.response.status === 503)
-                                return ("Service Unavailable");
-                            else
-                                if (props.response.status === 504)
-                                    return ("Gateway Timeout");
-                                else
-                                    if (Math.round(props.response.status / 100) !== 2)
-                                        return (`Error ${props.response.status}`);
-                                    else
-                                        return ("default")
+                        return ("default")
+    }
 };
 export default ErrorHandler;

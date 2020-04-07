@@ -2,10 +2,10 @@ const TIME_DEFAULT = '00:00:00';
 
 export let dateCleaner = (date) => { //input data: 2020-02-27T15:24:24Z
     let d = new Date(date);
-    if (date !=="")
-    return (
-        d.getFullYear() + '.' + d.getMonth() + '.' + d.getDate() + '\t'
-        + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds() + '\t');
+    if (date !== "")
+        return (
+            d.getFullYear() + '.' + d.getMonth() + '.' + d.getDate() + '\t'
+            + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds() + '\t');
     //output data: 2020.02.24	16:41:31
 
     else return ""
@@ -69,5 +69,8 @@ export let getTimeDiff = (startTime, curTime) => {//input data: 2020-02-27T15:24
 
 export let getDurationinSec = (str) => { //input data: 24 00:00:00 
     let objs = str.split(' ');
-    return objs[0] * 24 * 3600 + getSeconds(objs[1]); // output data: 2073604
+    if (objs.length === 2)
+        return objs[0] * 24 * 3600 + getSeconds(objs[1]); // output data: 2073604
+    else 
+    return getSeconds(objs[0]);
 }

@@ -10,6 +10,7 @@ import Main from './components/main/MainHandler';
 import Header from './components/main/Header';
 import Footer from './components/main/Footer';
 import Loader from './components/preloader/Loader';
+import ErrorPage from './components/auth/error-page';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
                 <div className="content-page">
 
                     <Redirect to='/auth' from="/alt_nti" />
+                    
                     <Route
                         path='/0/loader'
                         render={() =>

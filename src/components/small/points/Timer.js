@@ -28,6 +28,7 @@ const Timer = (props) => {
 
   }, [seconds, props.duration, props.startTime]);
 
+  
   return (
     <div className="">
       <Bar
